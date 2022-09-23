@@ -1,0 +1,108 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html, body{
+  margin-left: 1pc;
+  margin-right: 1pc;
+}
+
+/*Login CSS*/
+
+.login-cont {
+  width: 50%;
+  padding-top: 1pc;
+  padding-bottom: 3pc;
+  margin: auto;
+  margin-top: 3pc;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgb(198, 228, 198);
+  border: 1px solid rgb(177, 177, 177);
+}
+
+.login-cont > h2 {
+  margin-bottom: 3pc;
+}
+
+.login-cont > form > p {
+  font-size: 12px;
+  color: red;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+
+
+
+
+/*Navbar Component CSS*/
+
+.role-cont {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  margin-bottom: 1pc;
+}
+
+.role-cont > button {
+  height: 2pc;
+  margin-top: 2pc;
+}
+
+.nav-cont {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  
+  list-style: none;
+  border: 1px solid rgb(155, 155, 155);
+}
+
+.nav-link {
+  list-style-position: inside;
+  border-left: 1px solid rgb(117, 117, 117);
+  border-bottom: 1px solid rgb(117, 117, 117);
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 5px;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+
+/*Temporary SubComponent CSS*/
+.sub-cont{
+  height: 70vh;
+  margin-top: 1pc;
+  padding-top: 10pc;
+  background-color: rgb(235, 235, 235);
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(113, 113, 113);
+}
+
+
+
+/*Sidebar Component CSS*/
+.side-bar-cont {
+  width: 25%;
+  height: 70vh;
+  background-color: rgb(232, 232, 232);
+  margin-top: 1pc ;
+}
+
+.side-bar-cont > ul {
+  list-style-type:square;
+
+}
+
+.side-bar-name{
+  text-align: center;
+  background-color: rgb(205, 205, 205);
+}
+
