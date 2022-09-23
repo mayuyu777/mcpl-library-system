@@ -8,6 +8,26 @@ html, body{
   margin-right: 1pc;
 }
 
+/*Loading CSS*/
+
+.loading-cont{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(165, 174, 165, 0.582);
+  padding-top: 10pc;
+  text-align: center;
+}
+
+
+.loading-cont > img {
+  width: 5pc;
+}
+
 /*Login CSS*/
 
 .login-cont {
@@ -86,23 +106,34 @@ html, body{
   color: rgb(113, 113, 113);
 }
 
+/*Content Component CSS*/
+.module-cont {
+  margin-top: 1pc;
+  display: flex;
+}
+
+.content-cont{
+  background-color: rgb(244, 244, 244);
+  flex-grow: 15;
+  text-align: center;
+}
+
+
 
 
 /*Sidebar Component CSS*/
 .side-bar-cont {
-  width: 25%;
-  height: 70vh;
+  height: 100vh;
   background-color: rgb(232, 232, 232);
-  margin-top: 1pc ;
+  padding: 5px;
+  flex-grow: 1;
 }
 
 .side-bar-cont > ul {
-  list-style-type:square;
-
+  list-style: square;
 }
 
-.side-bar-name{
-  text-align: center;
-  background-color: rgb(205, 205, 205);
+.side-bar-cont > li {
+  text-decoration: none;
 }
 

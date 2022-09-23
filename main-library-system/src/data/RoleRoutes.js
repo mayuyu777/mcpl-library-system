@@ -126,3 +126,12 @@ export const getRoutes = (role) => {
 
     return routes;
 }
+
+
+export const getSubRoutes = (path) => {
+
+    const routes = routeComponents.find((item) => {
+        return item.path === path
+    }).subComponents;
+    return routes;
+}

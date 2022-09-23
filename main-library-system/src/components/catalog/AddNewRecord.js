@@ -1,5 +1,7 @@
 export default function AddNewRecord(){
     return(
-        <>AddNewRecord</>
+        <div className='content-cont'>
+            AddNewRecord
+        </div>
     )
 }

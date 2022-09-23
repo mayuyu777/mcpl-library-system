@@ -1,5 +1,7 @@
 export default function ViewAllRecord(){
     return(
-        <>ViewAllRecord</>
+        <div className='content-cont'>
+            ViewAllRecord
+        </div>
     )
 }

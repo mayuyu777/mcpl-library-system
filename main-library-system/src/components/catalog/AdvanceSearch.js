@@ -1,5 +1,7 @@
 export default function AdvanceSearch(){
     return(
-        <>AdvanceSearch</>
+        <div className='content-cont'>
+            AdvanceSearch
+        </div>
     )
 }
