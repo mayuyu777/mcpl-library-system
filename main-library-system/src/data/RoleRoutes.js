@@ -18,6 +18,7 @@ const LazyAdvanceSearch = React.lazy(() => import('../components/catalog/Advance
 
 export const routeComponents = [
     {
+        id:'777-77-1',
         name: 'Public Announcements',
         path: 'public-info',
         component: LazyPubAnnouncement,
@@ -25,6 +26,7 @@ export const routeComponents = [
         subComponents: []
     },
     {
+        id:'777-77-2',
         name: 'Catalog',
         path: 'catalog',
         component: LazyCatalog,
@@ -48,6 +50,7 @@ export const routeComponents = [
         ]
     },
     {
+        id:'777-77-3',
         name: 'Circulation',
         path: 'circulation',
         component: LazyCirculation,
@@ -55,6 +58,7 @@ export const routeComponents = [
         subComponents: []
     },
     {
+        id:'777-77-4',
         name: 'Acquisition',
         path: 'acquisition',
         component: LazyAcquisition,
@@ -63,6 +67,7 @@ export const routeComponents = [
         
     },
     {
+        id:'777-77-5',
         name: 'Inventory',
         path: 'inventory',
         component: LazyInventory,
@@ -70,6 +75,7 @@ export const routeComponents = [
         subComponents: []
     },
     {
+        id:'777-77-6',
         name: 'User Management',
         path: 'user-management',
         component: LazyUserManagement,
@@ -77,6 +83,7 @@ export const routeComponents = [
         subComponents: []
     },
     {
+        id:'777-77-7',
         name: 'Online Database',
         path: 'online-database',
         component: LazyOnlineDatabase,
@@ -84,6 +91,7 @@ export const routeComponents = [
         subComponents: []
     },
     {
+        id:'777-77-8',
         name: 'Reports',
         path: 'reports',
         component: LazyReports,
@@ -91,6 +99,7 @@ export const routeComponents = [
         subComponents: []
     },
     {
+        id:'777-77-9',
         name: 'Website Management',
         path: 'website-management',
         component: LazyWebsiteManagement,
@@ -98,6 +107,7 @@ export const routeComponents = [
         subComponents: []
     },
     {
+        id:'777-77-10',
         name: 'Qr Login System',
         path: 'qr-login-system',
         component: LazyQrLoginSystem,
@@ -105,6 +115,7 @@ export const routeComponents = [
         subComponents: []
     },
     {
+        id:'777-77-11',
         name: 'User Information',
         path: 'user-information',
         component: LazyQrLoginSystem,

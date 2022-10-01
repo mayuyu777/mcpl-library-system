@@ -6,6 +6,7 @@
 html, body{
   margin-left: 1pc;
   margin-right: 1pc;
+  padding-bottom: 10pc;
 }
 
 /*Loading CSS*/
@@ -106,16 +107,12 @@ html, body{
   color: rgb(113, 113, 113);
 }
 
-/*Content Component CSS*/
+/*Module Content Component CSS*/
 .module-cont {
-  margin-top: 1pc;
+  margin-top: 3pc;
   display: flex;
-}
-
-.content-cont{
-  background-color: rgb(244, 244, 244);
-  flex-grow: 15;
-  text-align: center;
+  gap: 2%;
+  justify-content: center;
 }
 
 
@@ -123,10 +120,13 @@ html, body{
 
 /*Sidebar Component CSS*/
 .side-bar-cont {
-  height: 100vh;
   background-color: rgb(232, 232, 232);
-  padding: 5px;
-  flex-grow: 1;
+  height: 50vh;
+  width: 20%;
+}
+
+.side-bar-cont > h3 {
+  text-align: center;
 }
 
 .side-bar-cont > ul {
@@ -137,3 +137,91 @@ html, body{
   text-decoration: none;
 }
 
+
+/*Content Component CSS*/
+.content-cont{
+  width: 75%;
+  height: 100vh;
+  padding-top: 1pc;
+  background-color: rgb(252, 252, 252);
+}
+
+
+
+/*Catalog: ADD-NEW-REC*/
+
+.content-button-cont {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+}
+
+.right-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.rec-framework{
+  height: 2pc;
+  border-radius: 3px;
+}
+
+.save-rec-button{
+  height: 2.5pc;
+  width: 8pc;
+  margin-bottom: 10px;
+}
+
+.upload-img-button{
+  width: 6.5pc;
+  height: 1.5pc;
+  margin-right: 0;
+  margin-left: auto;
+  
+}
+
+.tab-cont{
+  box-sizing: border-box;
+  width: 70%;
+  margin: auto;
+  margin-top: 1pc;
+  border: 1px solid rgba(0, 0, 0, 0.338); 
+  background-color:white;
+  border-radius: 10px;
+}
+
+
+.react-tabs__tab-list {
+  background-color: rgba(8, 67, 8, 0.249);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.react-tabs__tab-panel{
+  
+  padding: 2pc;
+  padding-bottom: 5pc;
+}
+
+.indicators{
+  width: 20px;
+  font-size: 11px;
+}
+
+.text-blue-btn{
+  color: rgb(19, 19, 155);
+  border: none;
+}
+
+.subField-code{
+  width: 20px;
+  border: none;
+  font-weight: 500;
+}
+
+.subField-input{
+  margin-left: 1pc;
+  width: 20pc;
+  float: right;
+}

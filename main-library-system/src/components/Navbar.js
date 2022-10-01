@@ -37,7 +37,7 @@ export default function Navbar(){
                {
                     routes.map((item) => {
                         return <NavLink 
-                                    key={item.path} 
+                                    key={item.id} 
                                     to={item.path}
                                     className="nav-link"
                                     style={({ isActive }) => {

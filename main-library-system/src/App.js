@@ -40,7 +40,7 @@ function App() {
                                     return(
                                     <>
                                       {index === 0 ? <Route index element={< item.component />}/> : <></>}
-                                      <Route path={item.path} element={
+                                      <Route  path={item.path} element={
                                         <React.Suspense fallback={<Loading/>}>
                                           {<item.component />}
                                         </React.Suspense>

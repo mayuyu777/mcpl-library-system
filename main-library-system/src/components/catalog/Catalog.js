@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar";
 export default function Catalog(){
     return(
         <div className="module-cont">  
-            <Sidebar pathName={'catalog'}/>
+            <Sidebar modName={'Catalog'} pathName={'catalog'}/>
             <Outlet />
         </div>
     )
