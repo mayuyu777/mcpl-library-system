@@ -13,7 +13,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                frameworks:['Default Framework','Books/Workbooks']
 
             },
             {
@@ -87,7 +87,7 @@ export const marcRecordTemplate = [
 
             },
             {
-                name: 'PHYSICAL DESCRIPTION FIXED FIELD--GENERAL INFORMATION',
+                name: 'FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION',
                 code:'008',
                 subFields:[
                     {
@@ -2137,6 +2137,1471 @@ export const marcRecordTemplate = [
                         id: 13,
                         code:'n',
                         name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SUBJECT ADDED ENTRY--CORPORATE NAME',
+                code:'610',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of heading or term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Corporate name or jurisdiction name as entry element',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Subordinate unit',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Location of meeting',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Date of meeting or treaty signing',
+                        value: "",
+                    },{
+                        id: 8,
+                        code:'h',
+                        name:'Title of a work',
+                        value: "",
+                    },{
+                        id: 9,
+                        code:'i',
+                        name:'Form subdivision',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'General subdivision',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'Chronological subdivision',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'n',
+                        name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SUBJECT ADDED ENTRY--MEETING NAME',
+                code:'611',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of heading or term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Meeting name or jurisdiction name as entry element',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Location of meeting',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Date of meeting',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Subordinate unit',
+                        value: "",
+                    },{
+                        id: 8,
+                        code:'h',
+                        name:'Title of a work',
+                        value: "",
+                    },{
+                        id: 9,
+                        code:'i',
+                        name:'Form subdivision',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'General subdivision',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'Chronological subdivision',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'n',
+                        name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SUBJECT ADDED ENTRY--UNIFORM TITLE',
+                code:'630',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of heading or term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Uniform title',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Relator term',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Language of a work',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Title of a work',
+                        value: "",
+                    },{
+                        id: 8,
+                        code:'h',
+                        name:'Form subdivision',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'General subdivision',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'Chronological subdivision',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'n',
+                        name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SUBJECT ADDED ENTRY--CHRONOLOGICAL TERM',
+                code:'648',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of heading or term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Chronological term',
+                        value: "",
+                    },{
+                        id: 8,
+                        code:'h',
+                        name:'Form subdivision',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'General subdivision',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'Chronological subdivision',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'n',
+                        name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SUBJECT ADDED ENTRY--TOPICAL TERM',
+                code:'650',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of heading or term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Topical term or geographic name as entry element',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Topical term following geographic name as entry element',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Location of event',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Active dates',
+                        value: "",
+                    },{
+                        id: 8,
+                        code:'h',
+                        name:'Relator term',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Form subdivision',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'General subdivision',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'m',
+                        name:'Chronological subdivision',
+                        value: "",
+                    },{
+                        id: 13,
+                        code:'n',
+                        name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SUBJECT ADDED ENTRY--GEOGRAPHIC NAME',
+                code:'651',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of heading or term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Geographic name',
+                        value: "",
+                    },{
+                        id: 8,
+                        code:'h',
+                        name:'Relator term',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Form subdivision',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'General subdivision',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'m',
+                        name:'Chronological subdivision',
+                        value: "",
+                    },{
+                        id: 13,
+                        code:'n',
+                        name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'INDEX TERM--UNCONTROLLED',
+                code:'653',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Uncontrolled term',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SUBJECT ADDED ENTRY--FACETED TOPICAL TERM',
+                code:'654',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of heading or term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Focus term',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Non-focus term',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Facet/hierarchy designation',
+                        value: "",
+                    },{
+                        id: 8,
+                        code:'h',
+                        name:'Relator term',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Form subdivision',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'General subdivision',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'m',
+                        name:'Chronological subdivision',
+                        value: "",
+                    },{
+                        id: 13,
+                        code:'n',
+                        name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'INDEX TERM--GENRE/FORM',
+                code:'655',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of heading or term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Genre/form data or focus term',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Non-focus term',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Facet/hierarchy designation',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Form subdivision',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'General subdivision',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'m',
+                        name:'Chronological subdivision',
+                        value: "",
+                    },{
+                        id: 13,
+                        code:'n',
+                        name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'INDEX TERM--OCCUPATION',
+                code:'656',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'INDEX TERM--FUNCTION',
+                code:'657',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'INDEX TERM--CURRICULUM OBJECTIVE',
+                code:'658',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'Main curriculum objective',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Subordinate curriculum objective',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Curriculum code',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME',
+                code:'662',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Country or larger entity',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'First-order political jurisdiction',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Intermediate political jurisdiction',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'City',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'Relator term',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'m',
+                        name:'City subsection',
+                        value: "",
+                    },{
+                        id: 13,
+                        code:'n',
+                        name:'Other nonjurisdictional geographic region and feature',
+                        value: "",
+                    },{
+                        id: 14,
+                        code:'o',
+                        name:'Extraterrestrial area',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SUBJECT ADDED ENTRY--TOPICAL TERM (OCLC, RLIN)',
+                code:'690',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of heading or term',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Topical term or geographic name as entry element',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Topical term following geographic name as entry element',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Active dates',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Relator term',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Form subdivision',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'General subdivision',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'m',
+                        name:'Chronological subdivision',
+                        value: "",
+                    },{
+                        id: 13,
+                        code:'n',
+                        name:'Geographic subdivision',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SUBJECT ADDED ENTRY--GEOGRAPHIC NAME (RLIN)',
+                code:'691',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SUBJECT ADDED ENTRY--PERSONAL NAME (RLIN)',
+                code:'696',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SUBJECT ADDED ENTRY--CORPORATE NAME (RLIN)',
+                code:'697',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SUBJECT ADDED ENTRY--MEETING NAME (RLIN)',
+                code:'698',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SUBJECT ADDED ENTRY--UNIFORM TITLE (RLIN)',
+                code:'699',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            }
+        ]
+    },{
+        tab:7,
+        fields:[
+            {
+                name: 'ADDED ENTRY--PERSONAL NAME',
+                code:'700',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Relator code',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Personal name',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Numeration',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Titles and other words associated with a name',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Dates associated with a name',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Relator term',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'Fuller form of name',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'ADDED ENTRY--CORPORATE NAME',
+                code:'710',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Relator code',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Corporate name or jurisdiction name as entry element',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Subordinate unit',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Location of meeting',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Date of meeting or treaty signing',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Relator term',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'ADDED ENTRY--MEETING NAME',
+                code:'711',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Relator code',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Meeting name or jurisdiction name as entry element',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Subordinate unit',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Location of meeting',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Date of meeting',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Relator term',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'ADDED ENTRY--UNCONTROLLED NAME',
+                code:'720',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Relator code',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'Name',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Relator term',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'ADDED ENTRY--UNIFORM TITLE',
+                code:'730',
+                indicators:['',''],
+                subFields:[
+                   
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Uniform title',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Language of a work',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Medium of performance for music',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Key for music',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE',
+                code:'740',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Uncontrolled related/analytical title',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'MAIN SERIES ENTRY ',
+                code:'760',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Edition',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL ADDED ENTRY--PERSONAL NAME (RLIN)',
+                code:'796',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL ADDED ENTRY--CORPORATE NAME (RLIN)',
+                code:'797',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL ADDED ENTRY--MEETING NAME (RLIN)',
+                code:'798',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL ADDED ENTRY--UNIFORM TITLE (RLIN)',
+                code:'799',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            }
+        ]
+    },{
+        tab:8,
+        fields:[
+            {
+                name: 'SERIES ADDED ENTRY--PERSONAL NAME',
+                code:'800',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Relator code',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Personal name',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Numeration',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Titles and other words associated with a name',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Dates associated with a name',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Relator term',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'k',
+                        name:'Fuller form of name',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SERIES ADDED ENTRY--CORPORATE NAME',
+                code:'810',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Relator code',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Corporate name or jurisdiction name as entry element',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Subordinate unit',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Location of meeting',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Date of meeting or treaty signing',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Relator term',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SERIES ADDED ENTRY--MEETING NAME',
+                code:'811',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Relator code',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Meeting name or jurisdiction name as entry element',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Subordinate unit',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Location of meeting',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Date of meeting',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'j',
+                        name:'Relator term',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'SERIES ADDED ENTRY--UNIFORM TITLE',
+                code:'830',
+                indicators:['',''],
+                subFields:[
+                   
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'9 (RLIN)',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Uniform title',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'e',
+                        name:'Language of a work',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'f',
+                        name:'Version',
+                        value: "",
+                    },{
+                        id: 7,
+                        code:'g',
+                        name:'Key for music',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'ELECTRONIC LOCATION AND ACCESS',
+                code:'856',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Materials specified',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'Host name',
+                        value: "",
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Access number',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'d',
+                        name:'Compression information',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'e',
+                        name:'Path',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'f',
+                        name:'Electronic name',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'g',
+                        name:'Processor of request',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'h',
+                        name:'Instruction',
+                        value: "",
+                    },{
+                        id: 13,
+                        code:'i',
+                        name:'Bits per second',
+                        value: "",
+                    },{
+                        id: 14,
+                        code:'j',
+                        name:'Password',
+                        value: "",
+                    },{
+                        id: 15,
+                        code:'l',
+                        name:'Logon',
+                        value: "",
+                    },{
+                        id: 16,
+                        code:'k',
+                        name:'Contact for access assistance',
+                        value: "",
+                    },{
+                        id: 17,
+                        code:'m',
+                        name:'Name of location of host',
+                        value: "",
+                    },{
+                        id: 18,
+                        code:'n',
+                        name:'Operating system',
+                        value: "",
+                    },{
+                        id: 19,
+                        code:'o',
+                        name:'Port',
+                        value: "",
+                    },{
+                        id: 20,
+                        code:'p',
+                        name:'Electronic format type',
+                        value: "",
+                    },{
+                        id: 21,
+                        code:'q',
+                        name:'Settings',
+                        value: "",
+                    },{
+                        id: 22,
+                        code:'r',
+                        name:'File size',
+                        value: "",
+                    },{
+                        id: 23,
+                        code:'s',
+                        name:'Terminal emulation',
+                        value: "",
+                    },{
+                        id: 24,
+                        code:'t',
+                        name:'Uniform Resource Identifier',
+                        value: "",
+                    },{
+                        id: 25,
+                        code:'u',
+                        name:'Hours access method available',
+                        value: "",
+                    },{
+                        id: 26,
+                        code:'v',
+                        name:'Record control number',
+                        value: "",
+                    },{
+                        id: 27,
+                        code:'w',
+                        name:'Nonpublic note',
+                        value: "",
+                    },{
+                        id: 28,
+                        code:'x',
+                        name:'Link text',
+                        value: "",
+                    },{
+                        id: 28,
+                        code:'y',
+                        name:'Public note',
+                        value: "",
+                    }
+                    
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'NON-MARC INFORMATION FIELD',
+                code:'887',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of data',
+                        value: "",
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'Content of non-MARC field',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SERIES ADDED ENTRY--PERSONAL NAME (RLIN)',
+                code:'896',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SERIES ADDED ENTRY--CORPORATE NAME (RLIN)',
+                code:'897',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SERIES ADDED ENTRY--MEETING NAME (RLIN)',
+                code:'898',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            },{
+                name: 'LOCAL SERIES ADDED ENTRY--UNIFORM TITLE (RLIN)',
+                code:'899',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'9 (RLIN)',
+                        value: "",
+                    }
+                ],
+                frameworks:['Default Framework']
+
+            }
+        ]
+    },{
+        tab: 9,
+        fields:[
+            {
+                name: 'ADDED ENTRY ELEMENTS',
+                code:'942',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Source of classification or shelving scheme',
+                        value: '',
+                        options:['Dewey Decimal Classification','Library of Congress Classification']
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'item type',
+                        value: "",
+                        options:['Books','Computer Files','Continuing Resources','Maps','Mixed Materials','Music','Reference','Visual Materials']
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Edition',
+                        value: "",
+                    },{
+                        id: 5,
+                        code:'d',
+                        name:'Classification part',
+                        value: "",
+                    },{
+                        id: 6,
+                        code:'e',
+                        name:'Item part',
+                        value: "",
+                    },{
+                        id: 10,
+                        code:'f',
+                        name:'Call number prefix',
+                        value: "",
+                    },{
+                        id: 11,
+                        code:'g',
+                        name:'Call number suffix',
+                        value: "",
+                    },{
+                        id: 12,
+                        code:'h',
+                        name:'Suppress in OPAC',
                         value: "",
                     }
                 ],

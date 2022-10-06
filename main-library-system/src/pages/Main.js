@@ -6,7 +6,12 @@ export default function Main(){
 
     return(
         <>
-            <Navbar />
+            <div className='header-cont'>
+                <div className="header-cont-layer">
+                    <Navbar />
+                </div>
+            </div>
+            
             <Outlet />
         </>
     )

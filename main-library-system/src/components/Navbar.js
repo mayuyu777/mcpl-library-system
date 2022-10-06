@@ -28,10 +28,11 @@ export default function Navbar(){
 
 
     return(
-        <>
+        <div style={{marginLeft:'2pc',marginRight:'2pc',paddingBottom:'2pc'}}>
             <div className='role-cont'>
                     <h1>{role}</h1>
-                    <button onClick={logout}>logout</button>
+                    <img className="mcpl-logo" src={require('../assets/mcpl.png')}/>
+                    <button style={{width:'4pc'}} onClick={logout}>logout</button>
             </div>
             <nav className="nav-cont">
                {
@@ -49,6 +50,6 @@ export default function Navbar(){
                     })
                }
             </nav>
-        </>
+        </div>
     );
 }
