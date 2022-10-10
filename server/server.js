@@ -104,7 +104,7 @@ app.post('/login', (req, res) => {
                     console.log(err);
                 }
                 if(response){
-                    req.session.user =  {email: result[0]['user_email'], role: result[0]['user_type'],id: result[0]['user_id']};
+                    req.session.user =  {email: result[0]['user_email'], role: result[0]['user_type'],id: result[0]['user_id'], fullname: result[0]['user_fname'].concat(' ').concat(result[0]['user_lname'])};
                     // console.log(req.session.user);
                     res.send({isLoggedIn: true, message: "Signed in!", res:req.session.user});
                 }else{
@@ -132,7 +132,7 @@ app.post('/uploadBookCover', (req, res) => {
 app.post('/addNewRecord', async (req,res)=>{
   
     const unique_id = uuid();
-    const small_id = unique_id.slice(0,8);
+    const book_id = unique_id.slice(0,8);
     const errors = [];
     let sqlInsert = '';
     
@@ -163,7 +163,7 @@ app.post('/addNewRecord', async (req,res)=>{
 
         try{
 
-           await db.query(sqlInsert,[small_id,req.body.copies,req.body.bookCover,req.session.user.id],(err, result)=>{
+           await db.query(sqlInsert,[book_id,req.body.copies,req.body.bookCover,req.session.user.id],(err, result)=>{
 
                 if(err){
                     return res.send({errors: [err]});
@@ -172,10 +172,10 @@ app.post('/addNewRecord', async (req,res)=>{
                 
                     filterData?.map((item)=>{
                       
-                        item.map((fitem, index)=>{
-
-                            const field_id = small_id.concat(index);
-
+                        item.map((fitem)=>{
+                            const unique_id = uuid();
+                            const field_id = unique_id.slice(0,8);
+ 
                             let indOne = null;
                             let indTwo = null;
 
@@ -186,19 +186,22 @@ app.post('/addNewRecord', async (req,res)=>{
 
                             sqlInsert = 'Insert into Field (field_id,book_id,field_name,field_code,field_indicator_one,field_indicator_two) values(?,?,?,?,?,?)';
 
-                            db.query(sqlInsert,[field_id,small_id,fitem.name,fitem.code,indOne,indTwo],(err, result)=>{
+                            db.query(sqlInsert,[field_id,book_id,fitem.name,fitem.code,indOne,indTwo],(err, result)=>{
                                 if(err){
                                     console.log(err);
                                 }
                                 if(result){
 
-                                    fitem.subFields.map((sitem,index)=>{
+                                    fitem.subFields.map((sitem)=>{
 
                                         sqlInsert = 'Insert into Subfield (sub_name,sub_code,sub_value,field_id) value(?,?,?,?)';
 
                                         db.query(sqlInsert,[sitem.name,sitem.code,sitem.value,field_id],(err,result)=>{
                                             if(err){
                                                 console.log(err);
+                                            }
+                                            if(result){
+                                                console.log(result)
                                             }
                                             
                                         })
@@ -229,6 +232,24 @@ app.post('/addNewRecord', async (req,res)=>{
         }
         return res.send({errors: errors});
     }
+
+})
+
+
+app.get('/getAllBookRec',async (req,res)=>{
+   
+    let sqlSelect = 'Select * from book inner join field on book.book_id = field.book_id inner join subfield on field.field_id = subfield.field_id where  field.field_code = ? or field.field_code = ? or field.field_code = ? or field.field_code = ? order by book.created_at desc';
+   
+    await db.query(sqlSelect,['245','300','260','852'] , (err, result)=>{
+        if(err){
+            console.log(err);
+        }
+        if(result){     
+
+            res.send({result: result})
+
+        }     
+    })
 
 })
 

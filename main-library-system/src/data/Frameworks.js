@@ -11,9 +11,11 @@ export const marcRecordTemplate = [
                         code:'00',
                         name:'fixed length control field',
                         value: "",
+                        isRequired: true,
                     }
                 ],
-                frameworks:['Default Framework','Books/Workbooks']
+                isRequired: true,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -25,8 +27,10 @@ export const marcRecordTemplate = [
                         code:'00',
                         name:'control field',
                         value: "",
+                        isRequired: true,
                     }
                 ],
+                isRequired: true,
                 frameworks:['Default Framework']
 
             },
@@ -39,8 +43,10 @@ export const marcRecordTemplate = [
                         code:'00',
                         name:'control field',
                         value: "",
+                        isRequired: true,
                     }
                 ],
+                isRequired: true,
                 frameworks:['Default Framework']
 
             },
@@ -53,9 +59,11 @@ export const marcRecordTemplate = [
                         code:'00',
                         name:'control field',
                         value: "",
+                        isRequired: true,
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: true,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -69,7 +77,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -83,7 +92,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -97,7 +107,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -122,6 +133,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -147,6 +159,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -172,6 +185,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -202,7 +216,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','CD/DVD General']
 
             },
             {
@@ -232,7 +247,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Serials','CD/DVD General']
 
             },
             {
@@ -272,7 +288,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -297,6 +314,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -317,7 +335,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','CD/DVD General']
 
             },
             {
@@ -337,6 +356,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -377,7 +397,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -390,29 +411,35 @@ export const marcRecordTemplate = [
                         code:'z',
                         name:'Original cataloging agency',
                         value: "",
+                        isRequired: false
                     },{
                         id: 2,
                         code:'c',
                         name:'Language of cataloging',
                         value: "",
+                        isRequired: false
                     },{
                         id: 3,
                         code:'a',
                         name:'Transcribing agency',
                         value: "",
+                        isRequired: true
                     },{
                         id: 4,
                         code:'q',
                         name:'Modifying agency',
                         value: "",
+                        isRequired: false
                     },{
                         id: 5,
                         code:'d',
                         name:'Description conventions',
                         value: "",
+                        isRequired: false
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: true,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -447,7 +474,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -467,6 +495,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -487,6 +516,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -512,6 +542,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -532,7 +563,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -552,7 +584,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -577,7 +610,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -602,7 +636,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }
         ]
@@ -656,7 +691,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'MAIN ENTRY--CORPORATE NAME',
@@ -700,7 +736,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'MAIN ENTRY--MEETING NAME',
@@ -744,7 +781,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'MAIN ENTRY--UNIFORM TITLE',
@@ -773,7 +811,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }
         ]
@@ -802,7 +841,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Serials','CD/DVD General']
 
             },{
                 name: 'KEY TITLE',
@@ -821,7 +861,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Serials','CD/DVD General']
 
             },{
                 name: 'UNIFORM TITLE',
@@ -856,7 +897,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'COLLECTIVE UNIFORM TITLE',
@@ -886,7 +928,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'TITLE STATEMENT',
@@ -898,25 +941,30 @@ export const marcRecordTemplate = [
                         code:'a',
                         name:'Title',
                         value: "",
+                        isRequired: true
                     },
                     {
                         id: 2,
-                        code:'c',
+                        code:'b',
                         name:'Remainder of title',
                         value: "",
+                        isRequired: false
                     },{
                         id: 3,
-                        code:'b',
+                        code:'c',
                         name:'Statement of responsibility, etc.',
                         value: "",
+                        isRequired: true
                     },{
                         id: 4,
-                        code:'x',
+                        code:'h',
                         name:'Medium',
                         value: "",
+                        isRequired: false
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: true,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'VARYING FORM OF TITLE',
@@ -946,7 +994,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'FORMER TITLE',
@@ -971,7 +1020,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Serials','CD/DVD General']
 
             },{
                 name: 'EDITION STATEMENT ',
@@ -991,7 +1041,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'PUBLICATION, DISTRIBUTION, ETC. (IMPRINT)',
@@ -1016,7 +1067,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'ADDRESS',
@@ -1116,7 +1168,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }
         ]
@@ -1133,35 +1186,42 @@ export const marcRecordTemplate = [
                         code:'a',
                         name:'Extent',
                         value: "",
+                        isRequired: false
                     },
                     {
                         id: 2,
                         code:'b',
                         name:'Other physical details',
                         value: "",
+                        isRequired: false
                     },{
                         id: 3,
                         code:'c',
                         name:'Dimensions',
                         value: "",
+                        isRequired: true
                     },{
                         id: 5,
                         code:'e',
                         name:'Accompanying material',
                         value: "",
+                        isRequired: false
                     },{
                         id: 6,
                         code:'f',
                         name:'Type of unit',
                         value: "",
+                        isRequired: false
                     },{
                         id: 7,
                         code:'g',
                         name:'Size of unit',
                         value: "",
+                        isRequired: false
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: true,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },
             {
@@ -1177,6 +1237,7 @@ export const marcRecordTemplate = [
                     },
                     
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -1193,7 +1254,8 @@ export const marcRecordTemplate = [
                     },
                     
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Serials','CD/DVD General']
 
             },
             {
@@ -1209,7 +1271,8 @@ export const marcRecordTemplate = [
                     },
                     
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Serials','CD/DVD General']
 
             },{
                 name: 'TRADE PRICE',
@@ -1284,7 +1347,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'TRADE AVAILABILITY INFORMATION',
@@ -1349,7 +1413,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }
         ]
@@ -1394,7 +1459,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SERIES STATEMENT',
@@ -1419,6 +1485,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             }
@@ -1438,7 +1505,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'WITH NOTE',
@@ -1452,6 +1520,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1466,6 +1535,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1501,7 +1571,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'CREATION/PRODUCTION CREDITS NOTE',
@@ -1515,6 +1586,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1529,6 +1601,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1543,6 +1616,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1568,7 +1642,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'TARGET AUDIENCE NOTE',
@@ -1588,7 +1663,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'GEOGRAPHIC COVERAGE NOTE',
@@ -1602,7 +1678,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'PREFERRED CITATION OF DESCRIBED MATERIALS NOTE',
@@ -1616,6 +1693,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1646,7 +1724,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'ADDITIONAL PHYSICAL FORM AVAILABLE NOTE',
@@ -1681,6 +1760,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1731,6 +1811,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1756,7 +1837,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'IMMEDIATE SOURCE OF ACQUISITION NOTE',
@@ -1811,7 +1893,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LANGUAGE NOTE',
@@ -1831,7 +1914,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'CUMULATIVE INDEX/FINDING AIDS NOTE',
@@ -1866,6 +1950,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1886,6 +1971,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1921,6 +2007,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -1941,6 +2028,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -2031,7 +2119,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'EXHIBITIONS NOTE',
@@ -2051,6 +2140,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -2065,7 +2155,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }
         ]
@@ -2140,7 +2231,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SUBJECT ADDED ENTRY--CORPORATE NAME',
@@ -2205,7 +2297,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SUBJECT ADDED ENTRY--MEETING NAME',
@@ -2270,7 +2363,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SUBJECT ADDED ENTRY--UNIFORM TITLE',
@@ -2330,7 +2424,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SUBJECT ADDED ENTRY--CHRONOLOGICAL TERM',
@@ -2375,6 +2470,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -2440,7 +2536,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SUBJECT ADDED ENTRY--GEOGRAPHIC NAME',
@@ -2490,7 +2587,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials']
 
             },{
                 name: 'INDEX TERM--UNCONTROLLED',
@@ -2504,7 +2602,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SUBJECT ADDED ENTRY--FACETED TOPICAL TERM',
@@ -2564,6 +2663,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -2619,7 +2719,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'INDEX TERM--OCCUPATION',
@@ -2633,7 +2734,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'INDEX TERM--FUNCTION',
@@ -2647,7 +2749,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'INDEX TERM--CURRICULUM OBJECTIVE',
@@ -2677,7 +2780,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME',
@@ -2737,6 +2841,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -2797,7 +2902,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL SUBJECT ADDED ENTRY--GEOGRAPHIC NAME (RLIN)',
@@ -2811,7 +2917,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL SUBJECT ADDED ENTRY--PERSONAL NAME (RLIN)',
@@ -2825,7 +2932,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL SUBJECT ADDED ENTRY--CORPORATE NAME (RLIN)',
@@ -2839,7 +2947,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL SUBJECT ADDED ENTRY--MEETING NAME (RLIN)',
@@ -2853,7 +2962,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL SUBJECT ADDED ENTRY--UNIFORM TITLE (RLIN)',
@@ -2867,7 +2977,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }
         ]
@@ -2922,7 +3033,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'ADDED ENTRY--CORPORATE NAME',
@@ -2967,7 +3079,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'ADDED ENTRY--MEETING NAME',
@@ -3012,7 +3125,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'ADDED ENTRY--UNCONTROLLED NAME',
@@ -3037,7 +3151,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'ADDED ENTRY--UNIFORM TITLE',
@@ -3072,7 +3187,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE',
@@ -3086,6 +3202,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -3100,7 +3217,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL ADDED ENTRY--PERSONAL NAME (RLIN)',
@@ -3114,7 +3232,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL ADDED ENTRY--CORPORATE NAME (RLIN)',
@@ -3128,7 +3247,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL ADDED ENTRY--MEETING NAME (RLIN)',
@@ -3142,7 +3262,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL ADDED ENTRY--UNIFORM TITLE (RLIN)',
@@ -3156,7 +3277,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }
         ]
@@ -3211,7 +3333,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SERIES ADDED ENTRY--CORPORATE NAME',
@@ -3256,7 +3379,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SERIES ADDED ENTRY--MEETING NAME',
@@ -3301,7 +3425,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'SERIES ADDED ENTRY--UNIFORM TITLE',
@@ -3336,9 +3461,173 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                name: 'Location',
+                code:'852',
+                indicators:['',''],
+                subFields:[
+                    {
+                        id: 1,
+                        code:'a',
+                        name:'Location',
+                        value: "",
+                        isRequired: true
+                    },
+                    {
+                        id: 2,
+                        code:'b',
+                        name:'Sublocation or collection',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 3,
+                        code:'c',
+                        name:'Shelving location',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 5,
+                        code:'d',
+                        name:'Former shelving location',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 6,
+                        code:'e',
+                        name:'Address',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 10,
+                        code:'f',
+                        name:'Coded location qualifier',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 11,
+                        code:'g',
+                        name:'Non-coded location qualifier',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 12,
+                        code:'h',
+                        name:'Classification part',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 13,
+                        code:'i',
+                        name:' Item part',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 14,
+                        code:'j',
+                        name:'Shelving control number',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 15,
+                        code:'l',
+                        name:'Call number prefix',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 16,
+                        code:'k',
+                        name:'Shelving form of title',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 17,
+                        code:'m',
+                        name:'Call number suffix',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 18,
+                        code:'n',
+                        name:'Country code',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 19,
+                        code:'o',
+                        name:'Piece designation',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 20,
+                        code:'p',
+                        name:'Piece physical condition',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 21,
+                        code:'q',
+                        name:'Copyright article-fee code',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 22,
+                        code:'r',
+                        name:'Copy number',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 23,
+                        code:'s',
+                        name:'Uniform Resource Identifier',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 24,
+                        code:'t',
+                        name:'Nonpublic note',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 25,
+                        code:'u',
+                        name:'Public note',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 26,
+                        code:'v',
+                        name:'Source of classification or shelving scheme',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 27,
+                        code:'w',
+                        name:'Materials specified',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 28,
+                        code:'x',
+                        name:'Linkage',
+                        value: "",
+                        isRequired: false
+                    },{
+                        id: 28,
+                        code:'y',
+                        name:'Sequence number',
+                        value: "",
+                        isRequired: false
+                    }
+                    
+                ],
+                isRequired: true,
+                frameworks:['Default Framework','Books/Workbooks','CD/DVD','Serials']
+
+            },
+            {
                 name: 'ELECTRONIC LOCATION AND ACCESS',
                 code:'856',
                 indicators:['',''],
@@ -3472,7 +3761,8 @@ export const marcRecordTemplate = [
                     }
                     
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'NON-MARC INFORMATION FIELD',
@@ -3492,6 +3782,7 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },{
@@ -3506,7 +3797,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL SERIES ADDED ENTRY--CORPORATE NAME (RLIN)',
@@ -3520,7 +3812,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL SERIES ADDED ENTRY--MEETING NAME (RLIN)',
@@ -3534,7 +3827,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
                 name: 'LOCAL SERIES ADDED ENTRY--UNIFORM TITLE (RLIN)',
@@ -3548,7 +3842,8 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }
         ]
@@ -3605,9 +3900,96 @@ export const marcRecordTemplate = [
                         value: "",
                     }
                 ],
-                frameworks:['Default Framework']
+                isRequired: false,
+                frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }
         ]
     }
 ]
+
+
+
+export function removeDuplicateObjectFromArray(array, key) {
+    var check = new Set();
+    return array.filter(obj => !check.has(obj[key]) && check.add(obj[key]));
+}
+
+
+export  function convertData(recSet, recArray) {
+
+    const arrayOfArrayOfObjects = recSet.map((item)=>{
+        return recArray.filter((fitem)=>{
+            return item.book_id === fitem.book_id;
+        })
+    })
+
+
+     const arrayOfObjectsBooks = recSet.map((item,index)=>{
+
+        const arraySetFields = removeDuplicateObjectFromArray(arrayOfArrayOfObjects[index],"field_code");
+        
+        const fields = arraySetFields.map((item)=>{
+
+            const subFields = arrayOfArrayOfObjects[index].map((fitem)=>{
+                if(fitem.field_code === item.field_code) {
+                    return {
+                        id: fitem.sub_id,
+                        code: fitem.sub_code,
+                        name:fitem.sub_name,
+                        value: fitem.sub_value,
+                    }
+                }
+            }).filter((item)=>{
+                return typeof item !== 'undefined';
+            })
+
+
+            return {
+                id: item.field_id,
+                code: item.field_code,
+                name: item.field_name,
+                indicator1: item.field_indicator_one,
+                indicator2: item.field_indicator_two,
+                subFields:subFields,
+            }
+        });
+
+
+        return {
+            id: item.book_id,
+            img: item.book_image,
+            copies: item.book_quantity,
+            fields: fields
+        }
+    })
+
+    // console.log(arrayOfObjectsBooks)
+    return arrayOfObjectsBooks;
+}
+
+
+export var initAllRecs = [{
+    id: "",
+    img: "",
+    copies: "",
+    fields: [
+        {
+            id: "",
+            code: "",
+            name: "",
+            indicator1: "",
+            indicator2: "",
+            subFields:[
+                {
+                    id: "",
+                    code: "",
+                    name:"",
+                    value: "",
+                }
+            ]
+        }
+    ]
+
+}];
+

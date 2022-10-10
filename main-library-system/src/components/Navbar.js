@@ -8,6 +8,7 @@ export default function Navbar(){
     const {auth} = useAuth();
 
     const role = auth.user.role.charAt(0).toUpperCase() + auth.user.role.slice(1);
+    const userName = auth.user.fullname;
 
     const routes = getRoutes(auth.user.role);
 
@@ -30,9 +31,12 @@ export default function Navbar(){
     return(
         <div style={{marginLeft:'2pc',marginRight:'2pc',paddingBottom:'2pc'}}>
             <div className='role-cont'>
-                    <h1>{role}</h1>
-                    <img className="mcpl-logo" src={require('../assets/mcpl.png')}/>
-                    <button style={{width:'4pc'}} onClick={logout}>logout</button>
+                    <div>
+                        <h1 style={{marginBottom:'0',marginTop:'1pc',fontSize:'2.5pc'}}>{role}</h1>
+                        <span class="dot"></span><label style={{fontSize:'11px',opacity:'.7'}}> {userName}</label>
+                    </div>
+                    <img alt="logo" className="mcpl-logo" src={require('../assets/mcpl.png')}/>
+                    <button style={{width:'4pc',backgroundColor:'transparent', border:'1px solid rgba(255, 255, 255, 0.945)',color:'white',borderRadius:'3px',opacity:'.8'}} onClick={logout}>logout</button>
             </div>
             <nav className="nav-cont">
                {

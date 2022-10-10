@@ -12,7 +12,7 @@ export default function Sidebar({modName,pathName}){
             <ul>
                 {
                     routes.map((item) => {
-                        return <li key={item.path}><NavLink to={"/"+ pathName + "/" +item.path}>{item.name}</NavLink></li>
+                        return item.displaySidebar? <li key={item.path}><NavLink to={"/"+ pathName + "/" +item.path}>{item.name}</NavLink></li> : null;
                     })
                 }
             </ul>

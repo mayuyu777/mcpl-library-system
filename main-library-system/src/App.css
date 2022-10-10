@@ -9,14 +9,14 @@ html, body{
 
 .header-cont{
   /* background-color: rgb(75, 156, 75); */
-  color: white;
+  color: rgba(255, 255, 255, 0.945);
   background-image: url('./assets/275559246_331445855694673_6887882595759885476_n.jpg');
 }
 
 .header-cont-layer{
   width: 100%;
   /* background-color: rgba(45, 108, 35, 0.822); */
-  background-color: rgba(51, 77, 36, 0.829);
+  background-color: rgba(43, 61, 33, 0.829);
 }
 
 .mcpl-logo{
@@ -88,6 +88,14 @@ html, body{
   height: 2pc;
   margin-top: 2pc;
   margin-bottom: 2pc;
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  background-color: rgb(23, 233, 16);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .nav-cont {
@@ -162,7 +170,7 @@ html, body{
   width: 75%;
   padding-top: 1pc;
   background-color: rgb(252, 252, 252);
-  border: 1px solid rgba(0, 0, 0, 0.372);
+  border: 1px solid rgba(0, 0, 0, 0.604);
   padding-bottom: 2pc;
 }
 
@@ -261,21 +269,23 @@ html, body{
 }
 
 .records-cont{
-  width: 100%;
-  height: 100vh;
+  width: 95%;
   margin: auto;
+  margin-bottom: 2pc;
+  border: 1px solid rgba(0, 0, 0, 0.357);
 }
 
 .record-item {
-  background-color: rgba(216, 216, 237, 0.227);
   padding: 0.5pc;
   display: flex;
-  border-top: 1px solid rgba(0, 0, 0, 0.082);
+  border-top: 1px solid rgba(0, 0, 0, 0.234);
   padding-left: 3pc;
 }
 
 .record-info-cont{
-  width: 80%;
+  width: 70%;
+  margin-top: 16px;
+  margin-left: 1pc;
 }
 
 .record-info-txt{
@@ -284,4 +294,62 @@ html, body{
 .book-cover-img{
   width: 7pc;
   padding: 0.5pc;
+  margin-left: 1pc;
+  object-fit: cover;
+}
+
+.records-simple-search-input{
+  height: 2pc;
+  width: 50%;
+  margin-right: .5pc;
+}
+
+.records-simple-search-btn{
+  height: 2pc;
+  width: 5pc;
+}
+
+.record-info-cont > p {
+  font-size:11px;
+  color: rgb(72, 66, 66);
+  margin: 1px;
+  margin-left: 1pc;
+  font-weight: bold;
+}
+
+.record-info-cont > p > span {
+  font-weight: 400;
+}
+
+
+
+/* PAGINATION CSS*/
+
+.paginationBttns {
+  width: 80%;
+  height: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.paginationBttns a {
+  padding: 5px;
+  margin-left: 2px;
+  border: 1px solid #0000004f;
+  color: rgba(0, 0, 0, 0.628);
+  cursor: pointer;
+}
+
+
+.paginationActive a {
+  color: rgb(0, 0, 0);
+  border: 1px solid #00000083;
+}
+
+.paginationDisabled a {
+  border: 1px solid #0000001d;
+  color: rgba(0, 0, 0, 0.316);
+  background-color: rgba(128, 128, 128, 0.096);
 }

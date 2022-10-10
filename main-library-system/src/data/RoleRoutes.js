@@ -12,6 +12,7 @@ const LazyQrLoginSystem = React.lazy(() => import('../components/qr_code_login/Q
 const LazyAddNewRecord = React.lazy(() => import('../components/catalog/AddNewRecord'));
 const LazyViewAllRecord = React.lazy(() => import('../components/catalog/ViewAllRecord'));
 const LazyAdvanceSearch = React.lazy(() => import('../components/catalog/AdvanceSearch'));
+const LazyDisplayBookDetails = React.lazy(() => import('../components/catalog/DisplayBookDetails'));
 
 
 
@@ -35,18 +36,28 @@ export const routeComponents = [
             {
                 name: 'Add New Record',
                 path: 'add-new-rec',
-                component: LazyAddNewRecord
+                component: LazyAddNewRecord,
+                displaySidebar: true
             },
             {
                 name: 'View All Record',
                 path: 'view-all-rec',
-                component: LazyViewAllRecord
+                component: LazyViewAllRecord,
+                displaySidebar: true
             },
             {
                 name: 'Advance Search',
                 path: 'advance-search',
-                component: LazyAdvanceSearch
-            }
+                component: LazyAdvanceSearch,
+                displaySidebar: true
+            },
+            {
+                name: 'Display Book Details',
+                path: ':id',
+                component: LazyDisplayBookDetails,
+                displaySidebar: false
+            },
+            
         ]
     },
     {

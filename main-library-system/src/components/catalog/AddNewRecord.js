@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { marcRecordTemplate } from '../../data/Frameworks';
+import { marcRecordTemplate }  from '../../data/Frameworks';
 import Axios from 'axios';
 
 
@@ -14,19 +14,19 @@ export default function AddNewRecord(){
 
 
     const onlyFields = (value) => {
-        return marcRecordTemplate.map(({tab,...rest}) =>{
-            return rest;
-        }).map(({fields,...rest})=>{
-            return fields;
-        }).map((item)=>{
-            return item.filter((item)=>{
-                
-                return item.frameworks.find(((item)=>{
-                    return item === value;
-                }));
-            })
-        })
-    }
+                            return marcRecordTemplate.map(({tab,...rest}) =>{
+                                return rest;
+                            }).map(({fields,...rest})=>{
+                                return fields;
+                            }).map((item)=>{
+                                return item.filter((item)=>{
+                                    
+                                    return item.frameworks.find(((item)=>{
+                                        return item === value;
+                                    }));
+                                })
+                            })
+                        }
 
     const [fieldVals, setFieldVals] = useState(onlyFields(selectFramework));
 
@@ -41,7 +41,7 @@ export default function AddNewRecord(){
             name:'Books/Workbooks'
         },{
             id:7773,
-            name:'CD/DVD'
+            name:'CD/DVD General'
         },{
             id:7774,
             name:'Serials'
@@ -119,37 +119,65 @@ export default function AddNewRecord(){
         formData.append("imgCover",imgCover);
 
         const filename = formData.get('imgCover').name;
+        
+        let flag = true;
 
-        try{
-         
-            Axios.post('http://localhost:3030/addNewRecord',{
-                fields: fieldVals,
-                copies: copies,
-                bookCover: filename
-            }).then((response)=>{
-
-                console.log(response)
-                if(response.data?.message){
-                    
-                    Axios.post('http://localhost:3030/uploadBookCover',formData,{
-                        headers: { "Content-Type": "multipart/form-data" } 
-                    }).then((res)=>{
-                        console.log(res)
-                    }).then((res)=>{
-                        console.log(res)
-                    })
-                    alert(response.data.message)
-                }
-
-                if(response.data?.errors){
-                    response.data?.errors.map((item)=>{
-                        alert(item);
-                    })
-                }
+        const isRequiredFieldsFilled = () => {
+            fieldVals.map((item)=>{
+                item.map((item)=>{
+                   if(item.isRequired){
+                        item.subFields.map((item)=>{
+                            if(item.isRequired && item.value === ''){
+                                flag = false;
+                            } 
+                        })
+                   }
+                })
             })
-        }catch(err){
-            console.log(err)
         }
+
+        isRequiredFieldsFilled()
+
+
+        if(flag){
+
+            try{
+         
+                Axios.post('http://localhost:3030/addNewRecord',{
+                    fields: fieldVals,
+                    copies: copies,
+                    bookCover: filename
+                }).then((response)=>{
+    
+                    console.log(response)
+                    if(response.data?.message){
+                        
+                        Axios.post('http://localhost:3030/uploadBookCover',formData,{
+                            headers: { "Content-Type": "multipart/form-data" } 
+                        }).then((res)=>{
+                            console.log(res)
+                        }).then((res)=>{
+                            console.log(res)
+                        })
+                        alert(response.data.message)
+                    }
+    
+                    if(response.data?.errors){
+                        response.data?.errors.map((item)=>{
+                            alert(item);
+                        })
+                    }
+                })
+
+            }catch(err){
+                console.log(err)
+            }
+
+        }else{
+            alert('Please fill in required fields');
+        }
+        
+        
 
     }
 
@@ -207,6 +235,9 @@ export default function AddNewRecord(){
                                         fields?.map((item,index)=>{
                                             const itemIndex = showFields?.indexOf(item.name);
                                             const fieldIndex = index;
+                                            const isRequired = item.isRequired;
+                                
+
                                             return (
                                                 <>
                                                     <span>
@@ -217,6 +248,7 @@ export default function AddNewRecord(){
                                                             })
                                                         }
                                                         <button onClick={toggleField} name={item.name} className='text-blue-btn'>{" - " +item.name}</button>
+                                                        {isRequired? <span style={{color:"red",fontSize:'15px'}}> *</span>: null}
                                                     </span><br/>
                                                     {
                                                         itemIndex >= 0 ?
@@ -225,7 +257,7 @@ export default function AddNewRecord(){
                                                                 <>
                                                                     <div className='subfield-cont'>
                                                                         <input name={item.code} className='subfield-code' type='text' maxLength='1' style={{fontSize:'12px',marginLeft:'3%'}} defaultValue={item.code} onChange={event =>  changeSubfieldCodeVal(event,tabIndex,fieldIndex,index) }/>
-                                                                        <label style={{fontSize:'12px', textAlign:'right',width:'20%',color:'rgb(19, 19, 155)'}}>{item.name}</label>
+                                                                        <span style={{color:"red",fontSize:'10px'}} ><label style={{fontSize:'12px', textAlign:'right',width:'20%',color:'rgb(19, 19, 155)'}}>{item.name}</label>{item.isRequired ? ' (required)' : ''}</span>
                                                                     { 
                                                                         !item?.options ? <input style={{fontSize:'12px'}} type='text' name={item.name} className='subfield-input' defaultValue={item.value} onChange={event => changeSubfieldInputVal(event,tabIndex,fieldIndex,index)} /> 
                                                                         : 
