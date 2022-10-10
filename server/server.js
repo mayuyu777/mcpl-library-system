@@ -122,7 +122,7 @@ app.post('/uploadBookCover', (req, res) => {
 
    const file = req.files.imgCover;
    const filename = file.name;
-    file.mv('../main-library-system/src/assets/uploads/'+filename,(err)=>{
+    file.mv('../main-library-system/public/uploads/'+filename,(err)=>{
         if(err){
             console.log(err)
         }
@@ -235,21 +235,40 @@ app.post('/addNewRecord', async (req,res)=>{
 
 })
 
+app.post('/getBookDet', (req,res)=>{
+
+    let sqlSelect = 'Select * from book inner join field on book.book_id = field.book_id inner join subfield on field.field_id = subfield.field_id where  book.book_id = ?';
+
+    if(req.session.user){
+        db.query(sqlSelect,[req.body.id],(err,result)=>{
+            if(err){
+                console.log(err)
+            }
+            if(result){
+                res.send({result:result})
+            }
+        })
+    }
+})
+
 
 app.get('/getAllBookRec',async (req,res)=>{
    
     let sqlSelect = 'Select * from book inner join field on book.book_id = field.book_id inner join subfield on field.field_id = subfield.field_id where  field.field_code = ? or field.field_code = ? or field.field_code = ? or field.field_code = ? order by book.created_at desc';
    
-    await db.query(sqlSelect,['245','300','260','852'] , (err, result)=>{
-        if(err){
-            console.log(err);
-        }
-        if(result){     
-
-            res.send({result: result})
-
-        }     
-    })
+    if(req.session.user){
+        await db.query(sqlSelect,['245','300','260','852'] , (err, result)=>{
+            if(err){
+                console.log(err);
+            }
+            if(result){     
+    
+                res.send({result: result})
+    
+            }     
+        })
+    }
+    
 
 })
 

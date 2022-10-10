@@ -353,3 +353,35 @@ html, body{
   color: rgba(0, 0, 0, 0.316);
   background-color: rgba(128, 128, 128, 0.096);
 }
+
+
+
+/* DISPLAY BOOK DETAILS  CSS*/
+.upper-cont{
+  width: 95%;
+  display: flex;
+  padding: 2pc;
+  flex-wrap: wrap;
+  gap: 2pc;
+}
+
+.upper-cont > img {
+  width: 10pc ;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.172);
+  
+}
+
+.info-text-cont {
+  color: rgba(0, 0, 0, 0.665);
+}
+
+.info-text-cont > h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.info-text-cont > h3 > span {
+  font-weight: 400;
+}

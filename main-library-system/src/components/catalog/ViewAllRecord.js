@@ -57,7 +57,7 @@ export default function ViewAllRecord(){
             return item.code === '852'
         }).map((item)=>{
             return item.subFields.map((item,index)=>{
-                return item.value.concat(", ")
+                return index === 0? item.value : ', '.concat(item.value)
             })
         })
 
@@ -65,7 +65,7 @@ export default function ViewAllRecord(){
             return item.code === '300'
         }).map((item)=>{
             return item.subFields.map((item,index)=>{
-                return item.value.concat(", ") 
+                return index === 0? item.value : ', '.concat(item.value)
             })
         })
 
@@ -73,7 +73,7 @@ export default function ViewAllRecord(){
             return item.code === '260'
         }).map((item)=>{
             return item.subFields.map((item,index)=>{
-                return  item.value.concat(", ") 
+                return  index === 0? item.value : ', '.concat(item.value)
             })
         })
 
@@ -81,7 +81,7 @@ export default function ViewAllRecord(){
 
         return(
             <div className="record-item" style={!(index & 1) ? { backgroundColor:'rgba(227, 229, 234, 0.415)'}: null}>
-                {/* <img alt='book-cover' className='book-cover-img' src={require('../../../public/uploads'+item.img).default }/> */}
+                <img alt='book-cover' className='book-cover-img' src={'/uploads/'+item.img}/>
                 <div className='record-info-cont'>
                     <NavLink style={{textDecoration:'none',fontWeight:'700',fontSize:'17px'}} to={'/catalog/'+item.id}>{title}</NavLink>
                     <hr style={{marginTop:'5px', opacity:'.3'}}/>

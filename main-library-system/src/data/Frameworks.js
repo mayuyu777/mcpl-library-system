@@ -3968,28 +3968,3 @@ export  function convertData(recSet, recArray) {
     return arrayOfObjectsBooks;
 }
 
-
-export var initAllRecs = [{
-    id: "",
-    img: "",
-    copies: "",
-    fields: [
-        {
-            id: "",
-            code: "",
-            name: "",
-            indicator1: "",
-            indicator2: "",
-            subFields:[
-                {
-                    id: "",
-                    code: "",
-                    name:"",
-                    value: "",
-                }
-            ]
-        }
-    ]
-
-}];
-
