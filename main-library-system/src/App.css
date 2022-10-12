@@ -357,10 +357,16 @@ html, body{
 
 
 /* DISPLAY BOOK DETAILS  CSS*/
+.upper-cont-main {
+  display: flex;
+  padding-right: 2pc;
+  padding-top: 2pc;
+}
+
 .upper-cont{
   width: 95%;
   display: flex;
-  padding: 2pc;
+  padding-left: 2pc;
   flex-wrap: wrap;
   gap: 2pc;
 }
@@ -384,4 +390,18 @@ html, body{
 
 .info-text-cont > h3 > span {
   font-weight: 400;
+}
+
+.record-btn-cont > button {
+  float: right;
+  margin-bottom: 10px;
+}
+
+.record-edit-btn{
+  height: 2.5pc;
+  width: 8.5pc;
+}
+
+.record-delete-btn{
+  height: 2PC;
 }

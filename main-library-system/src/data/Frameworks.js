@@ -3,6 +3,7 @@ export const marcRecordTemplate = [
         tab: 0,
         fields: [
             {
+                id: 0,
                 name: 'LEADER',
                 code:'000',
                 subFields:[
@@ -19,6 +20,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'CONTROL NUMBER',
                 code:'001',
                 subFields:[
@@ -35,6 +37,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'CONTROL NUMBER IDENTIFIER',
                 code:'003',
                 subFields:[
@@ -51,6 +54,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'DATE AND TIME OF LATEST TRANSACTION',
                 code:'005',
                 subFields:[
@@ -67,6 +71,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: ' FIXED-LENGTH DATA ELEMENTS--ADDITIONAL MATERIAL CHARACTERISTICS',
                 code:'006',
                 subFields:[
@@ -82,6 +87,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'PHYSICAL DESCRIPTION FIXED FIELD--GENERAL INFORMATION',
                 code:'007',
                 subFields:[
@@ -97,6 +103,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION',
                 code:'008',
                 subFields:[
@@ -112,6 +119,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'LIBRARY OF CONGRESS CONTROL NUMBER',
                 code:'010',
                 indicators:['',''],
@@ -138,6 +146,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'NATIONAL BIBLIOGRAPHY NUMBER',
                 code:'015',
                 indicators:['',''],
@@ -164,6 +173,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'NATIONAL BIBLIOGRAPHIC AGENCY CONTROL NUMBER',
                 code:'016',
                 indicators:['',''],
@@ -190,6 +200,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'INTERNATIONAL STANDARD BOOK NUMBER',
                 code:'020',
                 indicators:['',''],
@@ -221,6 +232,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'INTERNATIONAL STANDARD SERIAL NUMBER',
                 code:'022',
                 indicators:['',''],
@@ -252,6 +264,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'OTHER STANDARD IDENTIFIER',
                 code:'024',
                 indicators:['',''],
@@ -293,6 +306,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: ' STANDARD TECHNICAL REPORT NUMBER',
                 code:'027',
                 indicators:['',''],
@@ -319,6 +333,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'PUBLISHER NUMBER',
                 code:'028',
                 indicators:['',''],
@@ -340,6 +355,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'SYSTEM CONTROL NUMBER',
                 code:'035',
                 indicators:['',''],
@@ -361,6 +377,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'SOURCE OF ACQUISITION',
                 code:'037',
                 indicators:['',''],
@@ -402,6 +419,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'CATALOGING SOURCE',
                 code:'040',
                 indicators:['',''],
@@ -443,6 +461,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'LANGUAGE CODE',
                 code:'041',
                 indicators:['',''],
@@ -479,6 +498,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'TIME PERIOD OF CONTENT',
                 code:'045',
                 indicators:['',''],
@@ -500,6 +520,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'FORM OF MUSICAL COMPOSITION CODE',
                 code:'047',
                 indicators:['',''],
@@ -521,6 +542,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'NUMBER OF MUSICAL INSTRUMENTS OR VOICES CODE',
                 code:'048',
                 indicators:['',''],
@@ -547,6 +569,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'LIBRARY OF CONGRESS CALL NUMBER',
                 code:'050',
                 indicators:['',''],
@@ -568,6 +591,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'GPO ITEM NUMBER',
                 code:'074',
                 indicators:['',''],
@@ -589,6 +613,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'DEWEY DECIMAL CLASSIFICATION NUMBER',
                 code:'082',
                 indicators:['',''],
@@ -615,6 +640,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'GOVERNMENT DOCUMENT CLASSIFICATION NUMBER',
                 code:'086',
                 indicators:['',''],
@@ -645,6 +671,7 @@ export const marcRecordTemplate = [
         tab: 1,
         fields:[
             {
+                id: 0,
                 name: 'MAIN ENTRY--PERSONAL NAME',
                 code:'100',
                 indicators:['',''],
@@ -695,6 +722,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'MAIN ENTRY--CORPORATE NAME',
                 code:'110',
                 indicators:['',''],
@@ -740,6 +768,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'MAIN ENTRY--MEETING NAME',
                 code:'111',
                 indicators:['',''],
@@ -785,6 +814,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'MAIN ENTRY--UNIFORM TITLE',
                 code:'130',
                 indicators:['',''],
@@ -820,6 +850,7 @@ export const marcRecordTemplate = [
         tab:2,
         fields:[
             {
+                id: 0,
                 name: 'ABBREVIATED TITLE',
                 code:'210',
                 indicators:['',''],
@@ -845,6 +876,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'KEY TITLE',
                 code:'222',
                 indicators:['',''],
@@ -865,6 +897,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'UNIFORM TITLE',
                 code:'240',
                 indicators:['',''],
@@ -901,6 +934,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'COLLECTIVE UNIFORM TITLE',
                 code:'243',
                 indicators:['',''],
@@ -932,6 +966,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'TITLE STATEMENT',
                 code:'245',
                 indicators:['',''],
@@ -967,6 +1002,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'VARYING FORM OF TITLE',
                 code:'246',
                 indicators:['',''],
@@ -998,6 +1034,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'FORMER TITLE',
                 code:'247',
                 indicators:['',''],
@@ -1024,6 +1061,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'EDITION STATEMENT ',
                 code:'250',
                 indicators:['',''],
@@ -1045,6 +1083,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'PUBLICATION, DISTRIBUTION, ETC. (IMPRINT)',
                 code:'260',
                 indicators:['',''],
@@ -1071,6 +1110,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'ADDRESS',
                 code:'270',
                 indicators:['',''],
@@ -1177,6 +1217,7 @@ export const marcRecordTemplate = [
         tab:3,
         fields:[
             {
+                id: 0,
                 name: 'PHYSICAL DESCRIPTION',
                 code:'300',
                 indicators:['',''],
@@ -1225,6 +1266,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'PLAYING TIME',
                 code:'306',
                 indicators:['',''],
@@ -1242,6 +1284,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'CURRENT PUBLICATION FREQUENCY',
                 code:'310',
                 indicators:['',''],
@@ -1259,6 +1302,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION',
                 code:'362',
                 indicators:['',''],
@@ -1275,6 +1319,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'TRADE PRICE',
                 code:'365',
                 indicators:['',''],
@@ -1351,6 +1396,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'TRADE AVAILABILITY INFORMATION',
                 code:'366',
                 indicators:['',''],
@@ -1422,6 +1468,7 @@ export const marcRecordTemplate = [
         tab:4,
         fields:[
             {
+                id: 0,
                 name: 'SERIES STATEMENT/ADDED ENTRY--TITLE',
                 code:'440',
                 indicators:['',''],
@@ -1463,6 +1510,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SERIES STATEMENT',
                 code:'490',
                 indicators:['',''],
@@ -1494,6 +1542,7 @@ export const marcRecordTemplate = [
         tab:5,
         fields:[
             {
+                id: 0,
                 name: 'GENERAL NOTE',
                 code:'500',
                 indicators:['',''],
@@ -1509,6 +1558,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'WITH NOTE',
                 code:'501',
                 indicators:['',''],
@@ -1524,6 +1574,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'BIBLIOGRAPHY, ETC. NOTE',
                 code:'504',
                 indicators:['',''],
@@ -1539,6 +1590,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'FORMATTED CONTENTS NOTE',
                 code:'505',
                 indicators:['',''],
@@ -1575,6 +1627,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'CREATION/PRODUCTION CREDITS NOTE',
                 code:'508',
                 indicators:['',''],
@@ -1590,6 +1643,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'PARTICIPANT OR PERFORMER NOTE',
                 code:'511',
                 indicators:['',''],
@@ -1605,6 +1659,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'DATE/TIME AND PLACE OF AN EVENT NOTE',
                 code:'518',
                 indicators:['',''],
@@ -1620,6 +1675,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'SUMMARY, ETC.',
                 code:'520',
                 indicators:['',''],
@@ -1646,6 +1702,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'TARGET AUDIENCE NOTE',
                 code:'521',
                 indicators:['',''],
@@ -1667,6 +1724,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'GEOGRAPHIC COVERAGE NOTE',
                 code:'522',
                 indicators:['',''],
@@ -1682,6 +1740,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'PREFERRED CITATION OF DESCRIBED MATERIALS NOTE',
                 code:'524',
                 indicators:['',''],
@@ -1697,6 +1756,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'STUDY PROGRAM INFORMATION NOTE',
                 code:'526',
                 indicators:['',''],
@@ -1728,6 +1788,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'ADDITIONAL PHYSICAL FORM AVAILABLE NOTE',
                 code:'530',
                 indicators:['',''],
@@ -1764,6 +1825,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'REPRODUCTION NOTE',
                 code:'533',
                 indicators:['',''],
@@ -1815,6 +1877,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'SYSTEM DETAILS NOTE',
                 code:'538',
                 indicators:['',''],
@@ -1841,6 +1904,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'IMMEDIATE SOURCE OF ACQUISITION NOTE',
                 code:'541',
                 indicators:['',''],
@@ -1897,6 +1961,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LANGUAGE NOTE',
                 code:'546',
                 indicators:['',''],
@@ -1918,6 +1983,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'CUMULATIVE INDEX/FINDING AIDS NOTE',
                 code:'555',
                 indicators:['',''],
@@ -1954,6 +2020,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'INFORMATION ABOUT DOCUMENTATION NOTE',
                 code:'556',
                 indicators:['',''],
@@ -1975,6 +2042,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'COPY AND VERSION IDENTIFICATION NOTE',
                 code:'562',
                 indicators:['',''],
@@ -2011,6 +2079,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'BINDING INFORMATION',
                 code:'563',
                 indicators:['',''],
@@ -2032,6 +2101,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'ACTION NOTE',
                 code:'583',
                 indicators:['',''],
@@ -2123,6 +2193,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'EXHIBITIONS NOTE',
                 code:'585',
                 indicators:['',''],
@@ -2144,6 +2215,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'AWARDS NOTE',
                 code:'586',
                 indicators:['',''],
@@ -2164,6 +2236,7 @@ export const marcRecordTemplate = [
         tab:6,
         fields:[
             {
+                id: 0,
                 name: 'SUBJECT ADDED ENTRY--PERSONAL NAME',
                 code:'600',
                 indicators:['',''],
@@ -2235,6 +2308,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SUBJECT ADDED ENTRY--CORPORATE NAME',
                 code:'610',
                 indicators:['',''],
@@ -2301,6 +2375,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SUBJECT ADDED ENTRY--MEETING NAME',
                 code:'611',
                 indicators:['',''],
@@ -2367,6 +2442,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SUBJECT ADDED ENTRY--UNIFORM TITLE',
                 code:'630',
                 indicators:['',''],
@@ -2428,6 +2504,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SUBJECT ADDED ENTRY--CHRONOLOGICAL TERM',
                 code:'648',
                 indicators:['',''],
@@ -2474,6 +2551,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'SUBJECT ADDED ENTRY--TOPICAL TERM',
                 code:'650',
                 indicators:['',''],
@@ -2540,6 +2618,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SUBJECT ADDED ENTRY--GEOGRAPHIC NAME',
                 code:'651',
                 indicators:['',''],
@@ -2591,6 +2670,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials']
 
             },{
+                id: 0,
                 name: 'INDEX TERM--UNCONTROLLED',
                 code:'653',
                 indicators:['',''],
@@ -2606,6 +2686,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SUBJECT ADDED ENTRY--FACETED TOPICAL TERM',
                 code:'654',
                 indicators:['',''],
@@ -2667,6 +2748,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'INDEX TERM--GENRE/FORM',
                 code:'655',
                 indicators:['',''],
@@ -2723,6 +2805,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'INDEX TERM--OCCUPATION',
                 code:'656',
                 indicators:['',''],
@@ -2738,6 +2821,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'INDEX TERM--FUNCTION',
                 code:'657',
                 indicators:['',''],
@@ -2753,6 +2837,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'INDEX TERM--CURRICULUM OBJECTIVE',
                 code:'658',
                 indicators:['',''],
@@ -2784,6 +2869,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME',
                 code:'662',
                 indicators:['',''],
@@ -2845,6 +2931,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'LOCAL SUBJECT ADDED ENTRY--TOPICAL TERM (OCLC, RLIN)',
                 code:'690',
                 indicators:['',''],
@@ -2906,6 +2993,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL SUBJECT ADDED ENTRY--GEOGRAPHIC NAME (RLIN)',
                 code:'691',
                 indicators:['',''],
@@ -2921,6 +3009,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL SUBJECT ADDED ENTRY--PERSONAL NAME (RLIN)',
                 code:'696',
                 indicators:['',''],
@@ -2936,6 +3025,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL SUBJECT ADDED ENTRY--CORPORATE NAME (RLIN)',
                 code:'697',
                 indicators:['',''],
@@ -2951,6 +3041,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL SUBJECT ADDED ENTRY--MEETING NAME (RLIN)',
                 code:'698',
                 indicators:['',''],
@@ -2966,6 +3057,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL SUBJECT ADDED ENTRY--UNIFORM TITLE (RLIN)',
                 code:'699',
                 indicators:['',''],
@@ -2986,6 +3078,7 @@ export const marcRecordTemplate = [
         tab:7,
         fields:[
             {
+                id: 0,
                 name: 'ADDED ENTRY--PERSONAL NAME',
                 code:'700',
                 indicators:['',''],
@@ -3037,6 +3130,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'ADDED ENTRY--CORPORATE NAME',
                 code:'710',
                 indicators:['',''],
@@ -3083,6 +3177,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'ADDED ENTRY--MEETING NAME',
                 code:'711',
                 indicators:['',''],
@@ -3129,6 +3224,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'ADDED ENTRY--UNCONTROLLED NAME',
                 code:'720',
                 indicators:['',''],
@@ -3155,6 +3251,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'ADDED ENTRY--UNIFORM TITLE',
                 code:'730',
                 indicators:['',''],
@@ -3191,6 +3288,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE',
                 code:'740',
                 indicators:['',''],
@@ -3206,6 +3304,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'MAIN SERIES ENTRY ',
                 code:'760',
                 indicators:['',''],
@@ -3221,6 +3320,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL ADDED ENTRY--PERSONAL NAME (RLIN)',
                 code:'796',
                 indicators:['',''],
@@ -3236,6 +3336,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL ADDED ENTRY--CORPORATE NAME (RLIN)',
                 code:'797',
                 indicators:['',''],
@@ -3251,6 +3352,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL ADDED ENTRY--MEETING NAME (RLIN)',
                 code:'798',
                 indicators:['',''],
@@ -3266,6 +3368,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL ADDED ENTRY--UNIFORM TITLE (RLIN)',
                 code:'799',
                 indicators:['',''],
@@ -3286,6 +3389,7 @@ export const marcRecordTemplate = [
         tab:8,
         fields:[
             {
+                id: 0,
                 name: 'SERIES ADDED ENTRY--PERSONAL NAME',
                 code:'800',
                 indicators:['',''],
@@ -3337,6 +3441,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SERIES ADDED ENTRY--CORPORATE NAME',
                 code:'810',
                 indicators:['',''],
@@ -3383,6 +3488,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SERIES ADDED ENTRY--MEETING NAME',
                 code:'811',
                 indicators:['',''],
@@ -3429,6 +3535,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'SERIES ADDED ENTRY--UNIFORM TITLE',
                 code:'830',
                 indicators:['',''],
@@ -3465,6 +3572,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'Location',
                 code:'852',
                 indicators:['',''],
@@ -3628,6 +3736,7 @@ export const marcRecordTemplate = [
 
             },
             {
+                id: 0,
                 name: 'ELECTRONIC LOCATION AND ACCESS',
                 code:'856',
                 indicators:['',''],
@@ -3765,6 +3874,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'NON-MARC INFORMATION FIELD',
                 code:'887',
                 indicators:['',''],
@@ -3786,6 +3896,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework']
 
             },{
+                id: 0,
                 name: 'LOCAL SERIES ADDED ENTRY--PERSONAL NAME (RLIN)',
                 code:'896',
                 indicators:['',''],
@@ -3801,6 +3912,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL SERIES ADDED ENTRY--CORPORATE NAME (RLIN)',
                 code:'897',
                 indicators:['',''],
@@ -3816,6 +3928,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL SERIES ADDED ENTRY--MEETING NAME (RLIN)',
                 code:'898',
                 indicators:['',''],
@@ -3831,6 +3944,7 @@ export const marcRecordTemplate = [
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             },{
+                id: 0,
                 name: 'LOCAL SERIES ADDED ENTRY--UNIFORM TITLE (RLIN)',
                 code:'899',
                 indicators:['',''],
@@ -3851,6 +3965,7 @@ export const marcRecordTemplate = [
         tab: 9,
         fields:[
             {
+                id: 0,
                 name: 'ADDED ENTRY ELEMENTS',
                 code:'942',
                 indicators:['',''],

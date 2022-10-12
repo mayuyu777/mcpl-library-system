@@ -56,7 +56,7 @@ const db = mysql.createConnection({
 
 
 app.post('/register', (req, res) => {
-    const sqlInsert = "Insert into User(user_type, user_fname, user_lname, user_mname, user_email, "+
+    const sqlUpdate = "Insert into User(user_type, user_fname, user_lname, user_mname, user_email, "+
     "user_pass, user_gender, user_contact, user_stat, user_registration_date, user_expiration_date) values(?,?,?,?,?,?,?,?,?,?,?)";
 
     bcrypt.hash(req.body.pass, saltRounds, (err, hash) => {
@@ -65,7 +65,7 @@ app.post('/register', (req, res) => {
             console.log(err);
         }
 
-        db.query(sqlInsert,[req.body.type, req.body.fname, req.body.lname, req.body.mname, req.body.email, hash, req.body.gender
+        db.query(sqlUpdate,[req.body.type, req.body.fname, req.body.lname, req.body.mname, req.body.email, hash, req.body.gender
             , req.body.contact, req.body.stat, req.body.registrationDate, req.body.expirationDate, 
             (err, result) => {
                 if(err){
@@ -122,11 +122,16 @@ app.post('/uploadBookCover', (req, res) => {
 
    const file = req.files.imgCover;
    const filename = file.name;
-    file.mv('../main-library-system/public/uploads/'+filename,(err)=>{
-        if(err){
-            console.log(err)
-        }
-    })
+
+   if(req.session.user){
+        file.mv('../main-library-system/public/uploads/'+filename,(err)=>{
+            if(err){
+                console.log(err)
+            }
+        })
+       
+   }
+    
 })
 
 app.post('/addNewRecord', async (req,res)=>{
@@ -156,8 +161,8 @@ app.post('/addNewRecord', async (req,res)=>{
                             return item.length > 0;
                         })
 
-
-    if(filterData.length > 0 && req.body.copies > 0 && req.body.bookCover){
+    
+    if(req.session.user && filterData.length > 0 && req.body.copies > 0 && req.body.bookCover){
 
         sqlInsert = 'Insert into Book (book_id,book_quantity,book_image,user_id) values(?,?,?,?)';
 
@@ -166,7 +171,8 @@ app.post('/addNewRecord', async (req,res)=>{
            await db.query(sqlInsert,[book_id,req.body.copies,req.body.bookCover,req.session.user.id],(err, result)=>{
 
                 if(err){
-                    return res.send({errors: [err]});
+
+                    return res.send({errors: err});
                 }
                 if(result){
                 
@@ -211,7 +217,7 @@ app.post('/addNewRecord', async (req,res)=>{
                             
                         })
                     })
-                    return res.send({message:"Book added successfully"})
+                    res.send({message:"Book added successfully"})
                 }
             })
 
@@ -262,7 +268,7 @@ app.get('/getAllBookRec',async (req,res)=>{
                 console.log(err);
             }
             if(result){     
-    
+
                 res.send({result: result})
     
             }     
@@ -270,6 +276,177 @@ app.get('/getAllBookRec',async (req,res)=>{
     }
     
 
+})
+
+
+app.post('/updateRecord', async (req,res)=>{
+    const unique_id = uuid();
+    const field_id = unique_id.slice(0,8);
+    const errors = [];
+    let sqlUpdate = '';
+    let sqlInsert = '';
+    
+    const filterData =  req.body.fields.filter((item)=>{
+                            return item.length > 0;
+                        }).map((item)=>{
+                        
+                            return item.map((item)=>{
+                                item.subFields =  item.subFields.filter((item)=>{
+                                    return item.value!=='';
+                                })
+
+                            return item;
+                            })
+                        
+                        }).map((item)=>{
+                            return item.filter((item)=>{
+                                return item.subFields.length > 0
+                            })
+                        }).filter((item)=>{
+                            return item.length > 0;
+                        })
+
+    if(req.session.user && filterData.length > 0 && req.body.copies > 0){
+
+        if(req.body?.bookCover){
+            sqlUpdate = 'Update Book set book_quantity = ?, book_image = ?, updated_at =? where book_id = ?';
+        }else{
+            sqlUpdate = 'Update Book set book_quantity = ?, updated_at =? where book_id = ?';
+        }
+       
+
+        try{
+
+            await db.query(sqlUpdate,req.body?.bookCover ? [req.body.copies,req.body.bookCover,Date.now(),req.body.bookid] : [req.body.copies,Date.now(),req.body.bookid], (err, result)=>{
+
+                if(err){
+
+                    console.log(err);
+                }
+                if(result?.affectedRows > 0){
+
+                    filterData?.map((item)=>{
+                      
+                        item.map( (fitem)=>{
+ 
+                            let indOne = null;
+                            let indTwo = null;
+                            let fid = fitem.id;
+
+                            if(fitem?.indicators){
+                                indOne = fitem.indicators[0]
+                                indTwo = fitem.indicators[1];
+                            }
+
+                            sqlUpdate = 'Update Field  set field_indicator_one = ?, field_indicator_two =? where book_id = ? and field_code = ?';
+
+                            db.query(sqlUpdate,[indOne,indTwo,req.body.bookid,fitem.code],(err, result)=>{
+                                if(err){
+                                    console.log(err);
+                                }
+                                if(result?.affectedRows > 0){
+                                    sqlUpdate = 'Update Subfield set sub_code =?, sub_value =? where sub_id =?';
+
+                                    fitem?.subFields.map((sitem)=>{
+
+                                        sqlUpdate = 'Update Subfield set sub_code =?, sub_value =? where sub_id =?';
+
+                                        db.query(sqlUpdate,[sitem.code,sitem.value, sitem.id],(err,result)=>{
+                                            if(err){
+                                                console.log(err);
+                                            }
+                                            if(result?.affectedRows === 0){
+                                                sqlInsert = 'Insert into Subfield (sub_name,sub_code,sub_value,field_id) value(?,?,?,?)';
+                                                db.query(sqlInsert,[sitem.name,sitem.code,sitem.value,fid],(err,result)=>{
+                                                    if(err){
+                                                        console.log(err);
+                                                    }
+                                                    if(result){
+                                                        console.log(result)
+                                                        
+                                                    }
+                                                    
+                                                })
+                                               
+                                            }else if(result?.affectedRows > 0){
+                                                console.log(result)
+                                            }
+                                        })
+                                             
+                                    })
+                                
+                                }else if(result?.affectedRows === 0){
+                                    sqlInsert = 'Insert into Field (field_id,book_id,field_name,field_code,field_indicator_one,field_indicator_two) values(?,?,?,?,?,?)';
+
+                                    db.query(sqlInsert,[field_id,req.body.bookid,fitem.name,fitem.code,indOne,indTwo],(err, result)=>{
+                                        if(err){
+                                            console.log(err);
+                                        }
+                                        if(result){
+                                            fitem?.subFields.map((sitem)=>{
+            
+                                                sqlInsert = 'Insert into Subfield (sub_name,sub_code,sub_value,field_id) value(?,?,?,?)';
+        
+                                                db.query(sqlInsert,[sitem.name,sitem.code,sitem.value,field_id],(err,result)=>{
+                                                    if(err){
+                                                        console.log(err);
+                                                    }
+                                                    if(result){
+                                                        console.log(result)
+                                                        
+                                                    }
+                                                    
+                                                })
+                                            })
+                                        }
+                                    })
+                                }
+                            })
+
+                        })
+
+                    })
+                    
+                    res.send({message:"Book updated successfully"})
+            
+                }
+            })
+
+        }catch(err){
+            console.log(err);
+        }
+
+    }else{
+        
+        if(filterData.length <= 0){
+            errors.push("Fields are empty");
+        }
+        if(req.body.copies <= 0){
+            errors.push("No. of copies should be greater than zero");
+        }
+
+        return res.send({errors: errors});
+    }
+
+    
+    
+
+})
+
+app.post('/delete-record',(req,res)=>{
+
+    let sqlDelete = 'Delete from book where book_id = ?';
+
+    if(req.session.user){
+        db.query(sqlDelete,[req.body.id],(err,result)=>{
+            if(err){
+                console.log(err)
+            }
+            if(result){
+                res.send({result:result})
+            }
+        })
+    }
 })
 
 
@@ -283,7 +460,7 @@ app.get('/logout', (req,res)=>{
 
 //Register test!!
 // app.get('/test', (req,res) => {
-//     const sqlInsert = "Insert into User(user_type, user_fname, user_lname, user_mname, user_email, "+
+//     const sqlUpdate = "Insert into User(user_type, user_fname, user_lname, user_mname, user_email, "+
 //     "user_pass, user_gender, user_contact, user_stat) values(?,?,?,?,?,?,?,?,?)";
 
 //     bcrypt.hash('1234567', saltRounds, (err, hash) => {
@@ -292,7 +469,7 @@ app.get('/logout', (req,res)=>{
 //             console.log(err);
 //         }
 
-//         db.query(sqlInsert,['admin','Natalie', 'Sagnoy', 'Invento','natalie@gmail.com', hash, 'female'
+//         db.query(sqlUpdate,['admin','Natalie', 'Sagnoy', 'Invento','natalie@gmail.com', hash, 'female'
 //             , '09772103342', 'online'], 
 //             (err, result) => {
 //                 if(err){
