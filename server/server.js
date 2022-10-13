@@ -279,6 +279,7 @@ app.get('/getAllBookRec',async (req,res)=>{
 })
 
 
+
 app.post('/updateRecord', async (req,res)=>{
     const unique_id = uuid();
     const field_id = unique_id.slice(0,8);
@@ -431,6 +432,13 @@ app.post('/updateRecord', async (req,res)=>{
     
     
 
+})
+
+app.post('/search-book',(req,res)=>{
+
+    if(req.session.user){
+        console.log(req.body)
+    }
 })
 
 app.post('/delete-record',(req,res)=>{

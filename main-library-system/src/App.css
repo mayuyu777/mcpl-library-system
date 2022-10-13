@@ -405,3 +405,83 @@ html, body{
 .record-delete-btn{
   height: 2PC;
 }
+
+
+
+/*CATALOG: ADVANCE SEARCH CSS*/
+
+.advance-search-select {
+  width: 7pc;
+  height: 1.8pc;
+  margin-right: 5px;
+  background-color: rgba(159, 154, 154, 0.113);
+  border-radius: 5px;
+  margin-bottom: 3px;
+}
+
+.advance-search-input{
+  width: 10pc;
+  height: 1.8pc;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+}
+.advance-search-add-btn{
+  width: 5pc;
+  height: 1.8pc;
+  border-radius: 5px;
+  background-color: rgb(9, 72, 9);
+  color: white;
+}
+
+.advance-search-remove-btn{
+  width: 5pc;
+  height: 1.8pc;
+  border-radius: 5px;
+  background-color: rgb(134, 17, 17);
+  color: white;
+}
+
+.item-type-main-cont{
+  width: 90%;
+  margin-top:5pc;
+  border: 1px solid rgba(0, 0, 0, 0.361);
+  padding-right:2pc;
+  padding-left:2pc;
+  padding-bottom:2pc;
+
+}
+
+.item-type-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.checkbox-cont{
+  width: 30%;
+  height: 2pc;
+}
+
+.bottom-cont{
+  margin-top: 3pc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4pc;
+}
+
+.search-btn-cont{
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+
+.advance-search-btn{
+  margin-top: 10pc;
+  width: 11pc;
+  height: 3pc;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.407);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.348);
+  font-size: 15px;
+}

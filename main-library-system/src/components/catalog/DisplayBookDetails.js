@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { removeDuplicateObjectFromArray, convertData } from '../../data/Frameworks';
-import { useNavigate } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { useNavigate } from "react-router-dom";
 import 'react-tabs/style/react-tabs.css';
 import { marcRecordTemplate }  from '../../data/Frameworks';
 import Axios from 'axios';
@@ -13,12 +13,14 @@ export default function DisplayBookDetails(){
     const [book, setBook] = useState([{}]);
     const [option,setOption] = useState(0);
 
-    const navigate = useNavigate();
 
     const [selectFramework, setSelectFramework] = useState('Default Framework');
     const [showFields, setShowFields] = useState(['']);
     const [copies, setCopies] = useState(0);
     const [imgCover,setImgCover] = useState([]);
+
+
+    const navigate = useNavigate();
 
     const onlyFields = (value) => {
         return marcRecordTemplate.map(({tab,...rest}) =>{
@@ -271,6 +273,8 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                     }
 
                     alert(response.data.message);
+
+                    window.location.reload();
 
                     
                 }).then((response)=>{
