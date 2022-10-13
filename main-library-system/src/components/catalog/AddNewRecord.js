@@ -11,6 +11,7 @@ export default function AddNewRecord(){
     const [showFields, setShowFields] = useState(['']);
     const [copies, setCopies] = useState(0);
     const [imgCover,setImgCover] = useState([]);
+    const [imgFlag,setImgFlag] = useState(false);
 
 
     const onlyFields = (value) => {
@@ -65,10 +66,18 @@ export default function AddNewRecord(){
 
     }
 
-    const changeCover = (event)=>{    
-        setImgCover(prev => (event.target.files[0]));
+    const changeCover = (event)=>{  
+        const fileName = event.target.files[0].name;
+        const extension = fileName.split('.').pop();
+        const allowedExtensions = ['png','jpg','jpeg'];
 
-        console.log(event.target.files[0])
+        if(allowedExtensions.includes(extension)){
+            setImgFlag(true);  
+        }else{
+            setImgFlag(false);
+        }
+        setImgCover(prev => (event.target.files[0])); 
+       
     }
 
     const toggleField = (event) =>{
@@ -139,7 +148,7 @@ export default function AddNewRecord(){
         isRequiredFieldsFilled()
 
 
-        if(flag){
+        if(flag && filename && copies > 0 && imgFlag){
 
             try{
          
@@ -159,8 +168,8 @@ export default function AddNewRecord(){
                         }).then((res)=>{
                             console.log(res)
                         })
-                        alert(response.data.message)
                     }
+                
     
                     if(response.data?.errors){
                         response.data?.errors.map((item)=>{
@@ -174,7 +183,22 @@ export default function AddNewRecord(){
             }
 
         }else{
-            alert('Please fill in required fields');
+            if(!flag){
+                alert('Please fill in required fields');
+            }
+            if(!filename){
+                alert("Please upload a book cover image");
+                
+            }
+
+            if(filename && !imgFlag){
+                alert('Please upload PNG/JPEG/JPG file.');
+            }
+            
+            if(copies <= 0){
+                alert("No. of copies should be greater than zero");
+            }
+            
         }
         
         
@@ -195,7 +219,7 @@ export default function AddNewRecord(){
                     </select>
 
                     <div>
-                        <input type="file" accept="image/*" className='upload-img-button' name='upload-image' defaultValue={imgCover} onChange={changeCover}/><br/>
+                        <input type="file"  accept="image/x-png,image/gif,image/jpeg" className='upload-img-button' name='upload-image' defaultValue={imgCover} onChange={changeCover}/><br/>
                         <input type='number' min='0' defaultValue={copies} style={{width:'15%'}} onChange={changeCopies} />
                         <label style={{fontSize:'13px'}}> Copies</label>
                     </div>
@@ -244,7 +268,7 @@ export default function AddNewRecord(){
                                                         <label style={{fontWeight:'500'}}>{item.code + " "}</label>
                                                         {
                                                             item.indicators?.map((item,index)=>{
-                                                                return <input name={item.name} className='indicators' type="text" maxLength='1' defaultValue='' onChange={event => changeSubfieldIndicatorVal(event,tabIndex,fieldIndex,index)}/>
+                                                                return <input name={item.name} className='indicators' type="text" maxLength='1' defaultValue={item} onChange={event => changeSubfieldIndicatorVal(event,tabIndex,fieldIndex,index)}/>
                                                             })
                                                         }
                                                         <button onClick={toggleField} name={item.name} className='text-blue-btn'>{" - " +item.name}</button>

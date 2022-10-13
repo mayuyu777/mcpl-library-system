@@ -105,10 +105,9 @@ app.post('/login', (req, res) => {
                 }
                 if(response){
                     req.session.user =  {email: result[0]['user_email'], role: result[0]['user_type'],id: result[0]['user_id'], fullname: result[0]['user_fname'].concat(' ').concat(result[0]['user_lname'])};
-                    // console.log(req.session.user);
                     res.send({isLoggedIn: true, message: "Signed in!", res:req.session.user});
                 }else{
-                    res.send({message: "Incorrect email/password!"});
+                    res.send({message: "Incorrect password!"});
                 }
             })
         }else{
@@ -122,13 +121,27 @@ app.post('/uploadBookCover', (req, res) => {
 
    const file = req.files.imgCover;
    const filename = file.name;
-
+   const book_id = req.body.id;
+ 
    if(req.session.user){
-        file.mv('../main-library-system/public/uploads/'+filename,(err)=>{
+
+        let sqlUpdate = "Update book set book_image = ? where book_id = ?";
+
+        db.query(sqlUpdate,[filename,book_id],(err,result)=>{
             if(err){
                 console.log(err)
             }
+            if(result){
+                file.mv('../main-library-system/public/uploads/'+filename,(err)=>{
+                    if(err){
+                        console.log(err)
+                    }
+                })
+                res.send({message:"Book cover updated successfully."});
+            }
         })
+
+
        
    }
     
@@ -138,7 +151,7 @@ app.post('/addNewRecord', async (req,res)=>{
   
     const unique_id = uuid();
     const book_id = unique_id.slice(0,8);
-    const errors = [];
+    // const errors = [];
     let sqlInsert = '';
     
     const filterData =  req.body.fields.filter((item)=>{
@@ -225,19 +238,20 @@ app.post('/addNewRecord', async (req,res)=>{
             console.log(err);
         }
 
-    }else{
-        
-        if(filterData.length <= 0){
-            errors.push("Fields are empty");
-        }
-        if(req.body.copies <= 0){
-            errors.push("No. of copies should be greater than zero");
-        }
-        if(!req.body.bookCover){
-            errors.push("Please upload a book cover image");
-        }
-        return res.send({errors: errors});
     }
+    // else{
+        
+    //     if(filterData.length <= 0){
+    //         errors.push("Fields are empty");
+    //     }
+    //     if(req.body.copies <= 0){
+    //         errors.push("No. of copies should be greater than zero");
+    //     }
+    //     if(!req.body.bookCover){
+    //         errors.push("Please upload a book cover image");
+    //     }
+    //     return res.send({errors: errors});
+    // }
 
 })
 
@@ -250,8 +264,10 @@ app.post('/getBookDet', (req,res)=>{
             if(err){
                 console.log(err)
             }
-            if(result){
+            if(result.length > 0){
                 res.send({result:result})
+            }else{
+                res.send({err: "Does not exist"});
             }
         })
     }
@@ -283,7 +299,7 @@ app.get('/getAllBookRec',async (req,res)=>{
 app.post('/updateRecord', async (req,res)=>{
     const unique_id = uuid();
     const field_id = unique_id.slice(0,8);
-    const errors = [];
+    // const errors = [];
     let sqlUpdate = '';
     let sqlInsert = '';
     
@@ -309,16 +325,15 @@ app.post('/updateRecord', async (req,res)=>{
 
     if(req.session.user && filterData.length > 0 && req.body.copies > 0){
 
-        if(req.body?.bookCover){
-            sqlUpdate = 'Update Book set book_quantity = ?, book_image = ?, updated_at =? where book_id = ?';
-        }else{
-            sqlUpdate = 'Update Book set book_quantity = ?, updated_at =? where book_id = ?';
-        }
-       
+        sqlUpdate = 'Update Book set book_quantity = ?, updated_at =? where book_id = ?';
 
+        const timestamp = Date.now();
+
+        console.log(timestamp)
+       
         try{
 
-            await db.query(sqlUpdate,req.body?.bookCover ? [req.body.copies,req.body.bookCover,Date.now(),req.body.bookid] : [req.body.copies,Date.now(),req.body.bookid], (err, result)=>{
+            await db.query(sqlUpdate,[req.body.copies,timestamp,req.body.bookid], (err, result)=>{
 
                 if(err){
 
@@ -417,17 +432,18 @@ app.post('/updateRecord', async (req,res)=>{
             console.log(err);
         }
 
-    }else{
-        
-        if(filterData.length <= 0){
-            errors.push("Fields are empty");
-        }
-        if(req.body.copies <= 0){
-            errors.push("No. of copies should be greater than zero");
-        }
-
-        return res.send({errors: errors});
     }
+    // else{
+        
+    //     if(filterData.length <= 0){
+    //         errors.push("Fields are empty");
+    //     }
+    //     if(req.body.copies <= 0){
+    //         errors.push("No. of copies should be greater than zero");
+    //     }
+
+    //     return res.send({errors: errors});
+    // }
 
     
     

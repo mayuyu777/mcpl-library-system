@@ -21,7 +21,7 @@ export default function AdvanceSearch(){
     const languages = ['All','English','Filipino'];
     const keyWords = ['Subject','Title','Series Title','Author','Publisher','Standard number'];
     const operators = ['and','or','not'];
-    const itemTypes = ['Journal','Reference','E-Journal','Multimedia','Magazine','Fiction','E-book','Filipiniana','Research Paper','Magazine','Series','Atlas'];
+    const itemTypes = ['Journal','Reference','E-Journal','Multimedia','Magazine','Fiction','E-book','Filipiniana','Research Paper','Series','Atlas','Computer File'];
     const searchObject = {
         keyword: 'Subject',
         operator: 'and',
@@ -156,8 +156,8 @@ export default function AdvanceSearch(){
                         {
                             itemTypes.map((item)=>{
                                 return <div className="checkbox-cont">
-                                    <input type="checkbox" onChange={ addCheckboxItem }  value={item}/>
-                                    <label>{item}</label>
+                                    <input type="checkbox" id={item} onChange={ addCheckboxItem }  value={item}/>
+                                    <label for={item}>{item}</label>
                                 </div>
                             })
                         }

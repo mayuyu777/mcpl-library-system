@@ -41,8 +41,8 @@ CREATE TABLE book (
   book_id varchar(11) NOT NULL PRIMARY key,
   book_quantity int(11) NOT NULL,
   book_image varchar(1000) DEFAULT NULL,
-  created_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  updated_ate timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  created_at timestamp NOT NULL DEFAULT current_timestamp(),
+  updated_at timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
   delete_at timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   user_id int(11) NOT NULL,
   FOREIGN key(user_id) REFERENCES User(user_id)
@@ -74,3 +74,7 @@ CREATE TABLE subfield (
   field_id varchar(11) NOT NULL,
   FOREIGN key(field_id) REFERENCES Field(field_id)
 );
+
+
+INSERT INTO `user` (`user_id`, `user_type`, `user_fname`, `user_lname`, `user_mname`, `user_email`, `user_pass`, `user_gender`, `user_contact`, `user_stat`, `user_registration_date`, `user_expiration_date`, `created_at`, `updated_at`, `delete_at`) VALUES
+(0, 'admin', 'Peaches', 'Sagnoy', 'Invento', 'admin@gmail.com', '$2b$10$J7M1/raWudYKYAwFOSbST.SgBK4lOEzvuIzPIcXse1n4qE7wX/mlm', 'female', '09772103342', 'online', NULL, NULL, '2022-10-06 08:01:40', '0000-00-00 00:00:00', '0000-00-00 00:00:00');

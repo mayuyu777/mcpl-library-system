@@ -122,11 +122,12 @@ export  default function Login(){
 
         if(!values.pass){
             errors.pass = "Password is required!";
-        }else if (values.pass.length < 4){
-            errors.pass = "Password must be more than 4 characters!";
-        }else if (values.pass.length > 8){
-            errors.pass = "Password must not exceed 8 characters!";
         }
+        // else if (values.pass.length < 4){
+        //     errors.pass = "Password must be more than 4 characters!";
+        // }else if (values.pass.length > 8){
+        //     errors.pass = "Password must not exceed 8 characters!";
+        // }
 
         if(Object.keys(errors).length > 0){
             setLoginRes({});

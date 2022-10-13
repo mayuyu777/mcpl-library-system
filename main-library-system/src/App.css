@@ -183,6 +183,7 @@ html, body{
   justify-content: space-between;
   width: 80%;
   margin-left: 1pc;
+  margin-top: 1pc;
 }
 
 .right-buttons {
@@ -404,6 +405,34 @@ html, body{
 
 .record-delete-btn{
   height: 2PC;
+}
+
+.rec-location-cont {
+  margin: auto;
+  text-align: center;
+  margin-top: 5pc;
+}
+
+
+.rec-location-cont > table {
+  border: 1px solid rgba(0, 0, 0, 0.448);
+  padding: 0;
+  margin: auto;
+  
+}
+
+.rec-location-cont > table > tr > th {
+  color: rgb(19, 80, 19);
+}
+
+.rec-location-cont > table > tr > td {
+ background-color: rgba(190, 189, 189, 0.156);
+}
+
+.rec-location-cont > table > tr > th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 

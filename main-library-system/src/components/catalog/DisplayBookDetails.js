@@ -11,13 +11,14 @@ import Axios from 'axios';
 export default function DisplayBookDetails(){
     const { id } = useParams();
     const [book, setBook] = useState([{}]);
-    const [option,setOption] = useState(0);
+    const [option,setOption] = useState(false);
 
 
     const [selectFramework, setSelectFramework] = useState('Default Framework');
     const [showFields, setShowFields] = useState(['']);
     const [copies, setCopies] = useState(0);
     const [imgCover,setImgCover] = useState([]);
+    const [imgFlag,setImgFlag] = useState(false);
 
 
     const navigate = useNavigate();
@@ -90,6 +91,8 @@ const frameworks = [
 
     useEffect(()=>{
         Axios.post('http://localhost:3030/getBookDet',{id:id}).then((response)=>{
+
+        if(response?.data?.result){
             const data = convertData(removeDuplicateObjectFromArray(response?.data?.result, 'book_id'),response?.data?.result);
 
             setBook([...data]);
@@ -128,7 +131,9 @@ const frameworks = [
            })
             
            setFieldVals(newData);
-
+        }else{
+            navigate('/')
+        }
 
         })
     },[])
@@ -151,10 +156,18 @@ const changeCopies = (event) =>{
 
 }
 
-const changeCover = (event)=>{    
-    setImgCover(prev => (event.target.files[0]));
+const changeCover = (event)=>{  
+    const fileName = event.target.files[0].name;
+    const extension = fileName.split('.').pop();
+    const allowedExtensions = ['png','jpg','jpeg'];
 
-    console.log(event.target.files[0])
+    if(allowedExtensions.includes(extension)){
+        setImgFlag(true);  
+    }else{
+        setImgFlag(false);
+    }
+    setImgCover(prev => (event.target.files[0])); 
+   
 }
 
 const toggleField = (event) =>{
@@ -211,17 +224,16 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
     }
 
     const editRecord = ()=>{
-        setOption(1);
+       
+       setOption(prev => !prev);
         
-        console.log(fieldVals);
-        console.log(book)
-
     }
 
 
     const onSaveRecord = () =>{
         const formData = new FormData();
         formData.append("imgCover",imgCover);
+        formData.append('id',id);
 
         const filename = formData.get('imgCover').name;
         
@@ -244,26 +256,30 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
         isRequiredFieldsFilled()
 
 
-        if(flag){
+        if(flag && copies > 0){
 
             try{
          
                 Axios.post('http://localhost:3030/updateRecord',{
                     fields: fieldVals,
                     copies: copies,
-                    bookCover: filename,
                     bookid: id
                 }).then((response)=>{
     
-                    if(response.data?.message && filename){
+                    if(response.data?.message && filename && imgFlag){
                         
                         Axios.post('http://localhost:3030/uploadBookCover',formData,{
                             headers: { "Content-Type": "multipart/form-data" } 
                         }).then((res)=>{
-                            console.log(res)
+                            alert(res.data?.message);
                         }).then((res)=>{
                             console.log(res)
                         })
+                        
+                    }
+
+                    if(filename && !imgFlag){
+                        alert('Please upload PNG/JPEG/JPG file.');
                     }
     
                     if(response.data?.errors){
@@ -272,7 +288,7 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                         })
                     }
 
-                    alert(response.data.message);
+                    alert(response.data?.message);
 
                     window.location.reload();
 
@@ -286,7 +302,13 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
             }
 
         }else{
-            alert('Please fill in required fields');
+            if(!flag){
+                alert('Please fill in required fields');
+            }
+            
+            if(copies <= 0){
+                alert("No. of copies should be greater than zero");
+            }
         }
         
         
@@ -294,12 +316,13 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
     }
 
 
+
     return(
         <>
         <div className='content-cont'>
         {
-            option === 0 ? 
-                
+            !option? 
+                <div style={{paddingBottom:'15pc'}}>
                     <div className="upper-cont-main">
                         <div className="upper-cont">
                             <img alt="img" src={'/uploads/'+book[0].img}/>
@@ -335,7 +358,21 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                                 <button className="record-delete-btn" onClick={deleteRecord}>Delete Record</button>
                         </div>
                     </div>
-               
+                    <div className="rec-location-cont">
+                        <table>
+                            <tr>
+                                <th>QR Code</th>
+                                <th>Collection or Sublocation</th>
+                                <th>Location</th>
+                            </tr>
+                            <tr>
+                                <td>HHEUF98324</td>
+                                <td>Academic Collection</td>
+                                <td>Mandaue City Public Library</td>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
                 :
 
                 <>
@@ -356,7 +393,8 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                     </div>
                 </div>
                 <div className='right-buttons'>
-                    <button className='save-rec-button' name="save-record" onClick={onSaveRecord}>Save Change</button>
+                    <button className='save-rec-button' onClick={editRecord}>Cancel</button>
+                    <button className='save-rec-button' name="save-record" onClick={onSaveRecord} style={{width:'7pc',marginLeft:'2pc'}}>Save Change</button>
                 </div>
             </div>
 
