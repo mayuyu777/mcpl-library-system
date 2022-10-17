@@ -148,6 +148,57 @@ export default function AddNewRecord(){
         isRequiredFieldsFilled()
 
 
+
+        const leaderLength = 24;
+        let directoryLength = 0;
+        let valueLength = 0;
+        let directoryFlag = false;
+
+        fieldVals.map((item)=>{
+            item.map((fitem) =>{
+                fitem.subFields.map((item)=>{
+                    if(fitem.code!='000' && item.value!=''){
+                        directoryFlag = true;
+
+                        valueLength += item.value.length + 1;
+                    }
+               })
+
+               if(directoryFlag){
+                    directoryLength += 12;
+                    if(fitem?.indicators){
+                        valueLength += 2;
+                    }
+                    directoryFlag = false;
+               }
+            })
+        })
+
+        const recordLength = leaderLength + directoryLength + valueLength;
+        const fieldLength = leaderLength + directoryLength + 1;
+
+        let fieldLengthTxt = '';
+        let recordLengthTxt = '';
+
+        for(let i = fieldLength.toString().length; i<5 ; i++){
+            fieldLengthTxt += '0';
+        }
+        fieldLengthTxt += fieldLength.toString();
+
+        for(let i = recordLength.toString().length; i<5 ; i++){
+            recordLengthTxt += '0';
+        }
+
+        recordLengthTxt += recordLength.toString() + 'nam  22' + fieldLengthTxt + '7a 4500';
+
+        fieldVals[0][0].subFields[0].value = recordLengthTxt;
+
+        setFieldVals(fieldVals);
+
+
+        console.log(fieldVals)
+
+
         if(flag && filename && copies > 0 && imgFlag){
 
             try{
@@ -181,6 +232,8 @@ export default function AddNewRecord(){
             }catch(err){
                 console.log(err)
             }
+
+            window.location.reload();
 
         }else{
             if(!flag){
@@ -283,11 +336,14 @@ export default function AddNewRecord(){
                                                                         <input name={item.code} className='subfield-code' type='text' maxLength='1' style={{fontSize:'12px',marginLeft:'3%'}} defaultValue={item.code} onChange={event =>  changeSubfieldCodeVal(event,tabIndex,fieldIndex,index) }/>
                                                                         <span style={{color:"red",fontSize:'10px'}} ><label style={{fontSize:'12px', textAlign:'right',width:'20%',color:'rgb(19, 19, 155)'}}>{item.name}</label>{item.isRequired ? ' (required)' : ''}</span>
                                                                     { 
-                                                                        !item?.options ? <input style={{fontSize:'12px'}} type='text' name={item.name} className='subfield-input' defaultValue={item.value} onChange={event => changeSubfieldInputVal(event,tabIndex,fieldIndex,index)} /> 
+                                                                        !item?.options ? (item?.disable ? <input style={{fontSize:'12px'}} type='text' name={item.name} className='subfield-input' defaultValue={item.value} onChange={event => changeSubfieldInputVal(event,tabIndex,fieldIndex,index)} disabled/> 
+                                                                                            : <input style={{fontSize:'12px'}} type='text' name={item.name} className='subfield-input' defaultValue={item.value} onChange={event => changeSubfieldInputVal(event,tabIndex,fieldIndex,index)}/> )
                                                                         : 
                                                                         <>
                                                                             <select className='subfield-input'  name={item.name} style={{height:'2pc'}} onChange={event => changeSubfieldInputVal(event,tabIndex,fieldIndex,index)} >
+                                                                                <option ></option>
                                                                                 {
+                                                                
                                                                                     item.options.map((item)=>{
                                                                                         return <option key={item} >{item}</option>
                                                                                     })

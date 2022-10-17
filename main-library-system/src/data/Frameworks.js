@@ -1,3 +1,8 @@
+const date = new Date();
+const dateYMD = date.getFullYear() +""+(date.getMonth()+1)+""+date.getDate();
+const dateNow = dateYMD +""+date.getHours()+""+date.getMinutes()+''+date.getSeconds()+'.0';
+
+
 export const marcRecordTemplate = [
     {
         tab: 0,
@@ -11,7 +16,8 @@ export const marcRecordTemplate = [
                         id: 1,
                         code:'00',
                         name:'fixed length control field',
-                        value: "",
+                        value: " nam a22     7a 4500",
+                        disable:true,
                         isRequired: true,
                     }
                 ],
@@ -29,10 +35,10 @@ export const marcRecordTemplate = [
                         code:'00',
                         name:'control field',
                         value: "",
-                        isRequired: true,
+                        
                     }
                 ],
-                isRequired: true,
+                isRequired: false,
                 frameworks:['Default Framework']
 
             },
@@ -45,7 +51,8 @@ export const marcRecordTemplate = [
                         id: 1,
                         code:'00',
                         name:'control field',
-                        value: "",
+                        value: "OSt",
+                        disable: true,
                         isRequired: true,
                     }
                 ],
@@ -62,7 +69,8 @@ export const marcRecordTemplate = [
                         id: 1,
                         code:'00',
                         name:'control field',
-                        value: "",
+                        value: dateNow,
+                        disable: true,
                         isRequired: true,
                     }
                 ],
@@ -111,7 +119,8 @@ export const marcRecordTemplate = [
                         id: 1,
                         code:'00',
                         name:'fixed length control field',
-                        value: "",
+                        disable: true,
+                        value: dateYMD + 'b        xxu||||| |||| 00| 0 eng d',
                     }
                 ],
                 isRequired: false,
@@ -153,7 +162,7 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'h',
+                        code:'q',
                         name:'Qualifying information',
                         value: "",
                     },{
@@ -239,22 +248,22 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'2',
                         name:'Source',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'a',
                         name:'International Standard Serial Number',
                         value: "",
                     },{
                         id: 3,
-                        code:'a',
+                        code:'y',
                         name:'Incorrect ISSN',
                         value: "",
                     },{
                         id: 4,
-                        code:'q',
+                        code:'z',
                         name:'Canceled ISSN',
                         value: "",
                     }
@@ -271,32 +280,32 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'2',
                         name:'Source of number or code',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'a',
                         name:'Standard number or code',
                         value: "",
                     },{
                         id: 3,
-                        code:'a',
+                        code:'c',
                         name:'Terms of availability',
                         value: "",
                     },{
                         id: 4,
-                        code:'q',
+                        code:'d',
                         name:'Additional codes following the standard number or code',
                         value: "",
                     },{
                         id: 5,
-                        code:'d',
+                        code:'q',
                         name:'Qualifying information',
                         value: "",
                     },{
                         id: 5,
-                        code:'2',
+                        code:'z',
                         name:'Canceled/invalid standard number or code',
                         value: "",
                     }
@@ -313,17 +322,17 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'a',
                         name:'Standard technical report number',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'q',
                         name:'Qualifying information',
                         value: "",
                     },{
                         id: 3,
-                        code:'a',
+                        code:'z',
                         name:'Canceled/invalid number',
                         value: "",
                     }
@@ -340,12 +349,12 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'a',
                         name:'Publisher number',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'b',
                         name:'Source',
                         value: "",
                     }
@@ -362,12 +371,12 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'a',
                         name:'System control number',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'z',
                         name:'Canceled/invalid control number',
                         value: "",
                     }
@@ -384,32 +393,32 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'a',
                         name:'Stock number',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'b',
                         name:'Source of stock number/acquisition',
                         value: "",
                     },{
                         id: 3,
-                        code:'a',
+                        code:'c',
                         name:'Terms of availability',
                         value: "",
                     },{
                         id: 4,
-                        code:'q',
+                        code:'f',
                         name:'Form of issue',
                         value: "",
                     },{
                         id: 5,
-                        code:'d',
+                        code:'g',
                         name:'Additional format characteristics',
                         value: "",
                     },{
                         id: 5,
-                        code:'2',
+                        code:'n',
                         name:'Note',
                         value: "",
                     }
@@ -426,31 +435,31 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'a',
                         name:'Original cataloging agency',
                         value: "",
                         isRequired: false
                     },{
                         id: 2,
-                        code:'c',
+                        code:'b',
                         name:'Language of cataloging',
                         value: "",
                         isRequired: false
                     },{
                         id: 3,
-                        code:'a',
+                        code:'c',
                         name:'Transcribing agency',
                         value: "",
                         isRequired: true
                     },{
                         id: 4,
-                        code:'q',
+                        code:'d',
                         name:'Modifying agency',
                         value: "",
                         isRequired: false
                     },{
                         id: 5,
-                        code:'d',
+                        code:'e',
                         name:'Description conventions',
                         value: "",
                         isRequired: false
@@ -468,27 +477,27 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'a',
                         name:'Language code of text/sound track or separate title',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'d',
                         name:'Language code of sung or spoken text',
                         value: "",
                     },{
                         id: 3,
-                        code:'a',
+                        code:'e',
                         name:'Language code of librettos',
                         value: "",
                     },{
                         id: 4,
-                        code:'q',
+                        code:'g',
                         name:'Language code of accompanying material other than librettos',
                         value: "",
                     },{
                         id: 5,
-                        code:'d',
+                        code:'h',
                         name:'Language code of original',
                         value: "",
                     }
@@ -527,12 +536,12 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'2',
                         name:'Source of code',
                         value: "",
                     },{
                         id: 2,
-                        code:'b',
+                        code:'a',
                         name:'Form of musical composition code',
                         value: "",
                     }
@@ -549,12 +558,12 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'2',
                         name:'Source of code',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'a',
                         name:'Performer or ensemble',
                         value: "",
                     },{
@@ -603,7 +612,7 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 2,
-                        code:'b',
+                        code:'z',
                         name:'Canceled/invalid GPO item number',
                         value: "",
                     }
@@ -620,12 +629,12 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'2',
                         name:'Edition number',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'a',
                         name:'Classification number',
                         value: "",
                     },{
@@ -647,17 +656,17 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'2',
                         name:'Number source',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'a',
                         name:'Classification number',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'z',
                         name:'Canceled/invalid classification number',
                         value: "",
                     }
@@ -678,42 +687,42 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'4',
                         name:'Relator code',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'a',
                         name:'Personal name',
                         value: "",
                     },{
                         id: 4,
-                        code:'x',
+                        code:'b',
                         name:'Numeration',
                         value: "",
                     },{
                         id: 5,
-                        code:'h',
+                        code:'c',
                         name:'Titles and words associated with a name',
                         value: "",
                     },{
                         id: 6,
-                        code:'e',
+                        code:'d',
                         name:'Dates associated with a name',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'e',
                         name:'Relator term',
                         value: "",
                     },{
                         id: 8,
-                        code:'9',
+                        code:'q',
                         name:'Fuller form of name',
                         value: "",
                     }
@@ -729,37 +738,37 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'4',
                         name:'Relator code',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'a',
                         name:'Corporate name or jurisdiction name as entry element',
                         value: "",
                     },{
                         id: 4,
-                        code:'x',
+                        code:'b',
                         name:'Subordinate unit',
                         value: "",
                     },{
                         id: 5,
-                        code:'h',
+                        code:'c',
                         name:'Location of meeting',
                         value: "",
                     },{
                         id: 6,
-                        code:'e',
+                        code:'d',
                         name:'Date of meeting or treaty signing',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'e',
                         name:'Relator term',
                         value: "",
                     }
@@ -775,27 +784,27 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'z',
+                        code:'4',
                         name:'Relator code',
                         value: "",
                     },{
                         id: 2,
-                        code:'c',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'a',
                         name:'Meeting name or jurisdiction name as entry element',
                         value: "",
                     },{
                         id: 4,
-                        code:'x',
+                        code:'c',
                         name:'Location of meeting',
                         value: "",
                     },{
                         id: 5,
-                        code:'h',
+                        code:'d',
                         name:'Date of meeting',
                         value: "",
                     },{
@@ -805,7 +814,7 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'j',
                         name:'Relator term',
                         value: "",
                     }
@@ -821,22 +830,22 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 2,
-                        code:'c',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'a',
                         name:'Uniform title',
                         value: "",
                     },{
                         id: 4,
-                        code:'x',
+                        code:'l',
                         name:'Language of a work',
                         value: "",
                     },{
                         id: 5,
-                        code:'h',
+                        code:'r',
                         name:'Key for music',
                         value: "",
                     }
@@ -862,12 +871,12 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'a',
                         name:'Abbreviated title',
                         value: "",
                     },{
                         id: 4,
-                        code:'x',
+                        code:'b',
                         name:'Qualifying information',
                         value: "",
                     }
@@ -883,7 +892,7 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 2,
-                        code:'c',
+                        code:'a',
                         name:'Key title',
                         value: "",
                     },{
@@ -904,28 +913,28 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'r',
                         name:'Key for music',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'c',
+                        code:'a',
                         name:'Uniform title',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'h',
                         name:'Medium',
                         value: "",
                     },{
                         id: 4,
-                        code:'x',
+                        code:'l',
                         name:'Language of a work',
                         value: "",
                     },{
                         id: 5,
-                        code:'y',
+                        code:'s',
                         name:'Version',
                         value: "",
                     }
@@ -947,17 +956,17 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'c',
+                        code:'h',
                         name:'Medium',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'l',
                         name:'Language of a work',
                         value: "",
                     },{
                         id: 4,
-                        code:'x',
+                        code:'s',
                         name:'Version',
                         value: "",
                     }
@@ -1015,17 +1024,17 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'c',
+                        code:'b',
                         name:'Remainder of title',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'h',
                         name:'Medium',
                         value: "",
                     },{
                         id: 4,
-                        code:'x',
+                        code:'i',
                         name:'Display text',
                         value: "",
                     }
@@ -1047,12 +1056,12 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'c',
+                        code:'b',
                         name:'Remainder of title',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'h',
                         name:'Medium',
                         value: "",
                     }
@@ -1074,7 +1083,7 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'c',
+                        code:'b',
                         name:'Remainder of edition statement',
                         value: "",
                     }
@@ -1096,12 +1105,12 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'c',
+                        code:'b',
                         name:'Name of publisher, distributor, etc.',
                         value: "",
                     },{
                         id: 3,
-                        code:'b',
+                        code:'c',
                         name:'Date of publication, distribution, etc.',
                         value: "",
                     }
@@ -1326,68 +1335,68 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'2',
                         name:'Source of price type code',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'a',
                         name:'Price type code',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'b',
                         name:'Price amount',
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'c',
                         name:'Currency code',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'d',
                         name:'Unit of pricing',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'e',
                         name:'Price note',
                         value: "",
                     },{
                         id: 8,
-                        code:'h',
+                        code:'f',
                         name:'Price effective from',
                         value: "",
                     },{
                         id: 9,
-                        code:'i',
+                        code:'g',
                         name:'Price effective until',
                         value: "",
                     },{
                         id: 10,
-                        code:'j',
+                        code:'h',
                         name:'Tax rate 1',
                         value: "",
                     },{
                         id: 11,
-                        code:'k',
+                        code:'i',
                         name:'Tax rate 2',
                         value: "",
                     },{
                         id: 12,
-                        code:'m',
+                        code:'j',
                         name:'ISO country code',
                         value: "",
                     },{
                         id: 13,
-                        code:'n',
+                        code:'k',
                         name:'MARC country code',
                         value: "",
                     },{
                         id: 14,
-                        code:'o',
+                        code:'m',
                         name:'Identification of pricing entity',
                         value: "",
                     }
@@ -1403,43 +1412,43 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'2',
                         name:'Source of availability status code',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'a',
                         name:'Publishers compressed title identification',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'b',
                         name:'Detailed date of publication',
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'c',
                         name:'Availability status code',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'d',
                         name:'Expected next availability date',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'e',
                         name:'Note',
                         value: "",
                     },{
                         id: 8,
-                        code:'h',
+                        code:'f',
                         name:'Publisherss discount category',
                         value: "",
                     },{
                         id: 9,
-                        code:'i',
+                        code:'g',
                         name:'Date made out of print',
                         value: "",
                     },{
@@ -1475,33 +1484,33 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'a',
                         name:'Title',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'n',
                         name:'Number of part/section of a work',
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'p',
                         name:'Name of part/section of a work',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'v',
                         name:'Volume/sequential designation',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'x',
                         name:'International Standard Serial Number',
                         value: "",
                     }
@@ -1523,12 +1532,12 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'v',
                         name:'Volume/sequential designation',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'x',
                         name:'International Standard Serial Number',
                         value: "",
                     }
@@ -1603,22 +1612,22 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'g',
                         name:'Miscellaneous information',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'r',
                         name:'Statement of responsibility',
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'t',
                         name:'Title',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'u',
                         name:'Uniform Resource Identifier',
                         value: "",
                     }
@@ -1693,7 +1702,7 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'u',
                         name:'Uniform Resource Identifier',
                         value: "",
                     }
@@ -1779,7 +1788,7 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'d',
                         name:'Title point value',
                         value: "",
                     }
@@ -1811,12 +1820,12 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'d',
                         name:'Order number',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'u',
                         name:'Uniform Resource Identifier',
                         value: "",
                     }
@@ -1848,27 +1857,27 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'d',
                         name:'Date of reproduction',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'e',
                         name:'Physical description of reproduction',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'f',
                         name:'Series statement of reproduction',
                         value: "",
                     },{
                         id: 8,
-                        code:'h',
+                        code:'m',
                         name:'Dates and/or sequential designation of issues reproduced',
                         value: "",
                     },{
                         id: 9,
-                        code:'i',
+                        code:'n',
                         name:'Note about reproduction',
                         value: "",
                     }
@@ -1890,12 +1899,12 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'i',
                         name:'Display text',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'u',
                         name:'Uniform Resource Identifier',
                         value: "",
                     }
@@ -1927,17 +1936,17 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'d',
                         name:'Date of acquisition',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'e',
                         name:'Accession number',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'f',
                         name:'Owner',
                         value: "",
                     },{
@@ -1947,12 +1956,12 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 9,
-                        code:'i',
+                        code:'n',
                         name:'Extent',
                         value: "",
                     },{
                         id: 10,
-                        code:'j',
+                        code:'o',
                         name:'Type of unit',
                         value: "",
                     }
@@ -2006,12 +2015,12 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'d',
                         name:'Bibliographic reference',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'u',
                         name:'Uniform Resource Identifier',
                         value: "",
                     }
@@ -2033,7 +2042,7 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'z',
                         name:'International Standard Book Number',
                         value: "",
                     }
@@ -2065,12 +2074,12 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'d',
                         name:'Presentation format',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'e',
                         name:'Number of copies',
                         value: "",
                     }
@@ -2092,7 +2101,7 @@ export const marcRecordTemplate = [
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'u',
                         name:'Uniform Resource Identifier',
                         value: "",
                     }
@@ -2124,67 +2133,62 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'d',
                         name:'Action interval',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'e',
                         name:'Contingency for action',
                         value: "",
                     },{
-                        id: 7,
-                        code:'g',
-                        name:'Note',
-                        value: "",
-                    },{
                         id: 8,
-                        code:'h',
+                        code:'f',
                         name:'Authorization',
                         value: "",
                     },{
                         id: 9,
-                        code:'i',
+                        code:'h',
                         name:'Jurisdiction',
                         value: "",
                     },{
                         id: 10,
-                        code:'j',
+                        code:'i',
                         name:'Method of action',
                         value: "",
                     },{
                         id: 11,
-                        code:'k',
+                        code:'j',
                         name:'Site of action',
                         value: "",
                     },{
                         id: 12,
-                        code:'m',
+                        code:'k',
                         name:'Action agent',
                         value: "",
                     },{
                         id: 13,
-                        code:'n',
+                        code:'l',
                         name:'Status',
                         value: "",
                     },{
                         id: 14,
-                        code:'o',
+                        code:'n',
                         name:'Extent',
                         value: "",
                     },{
                         id: 15,
-                        code:'p',
+                        code:'o',
                         name:'Type of unit',
                         value: "",
                     },{
                         id: 16,
-                        code:'q',
+                        code:'u',
                         name:'Uniform Resource Identifier',
                         value: "",
                     },{
                         id: 17,
-                        code:'r',
+                        code:'z',
                         name:'Public note',
                         value: "",
                     }
@@ -2200,13 +2204,13 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'3',
                         name:'Materials specified',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'a',
                         name:'Exhibitions note',
                         value: "",
                     }
@@ -2243,63 +2247,63 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'2',
                         name:'Source of heading or term',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'a',
                         name:'Personal name',
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'b',
                         name:'Numeration',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'c',
                         name:'Titles and other words associated with a name',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'d',
                         name:'Dates associated with a name',
                         value: "",
                     },{
                         id: 8,
-                        code:'h',
+                        code:'q',
                         name:'Fuller form of name',
                         value: "",
                     },{
                         id: 9,
-                        code:'i',
+                        code:'t',
                         name:'Title of a work',
                         value: "",
                     },{
                         id: 10,
-                        code:'j',
+                        code:'v',
                         name:'Form subdivision',
                         value: "",
                     },{
                         id: 11,
-                        code:'k',
+                        code:'x',
                         name:'General subdivision',
                         value: "",
                     },{
                         id: 12,
-                        code:'m',
+                        code:'y',
                         name:'Chronological subdivision',
                         value: "",
                     },{
                         id: 13,
-                        code:'n',
+                        code:'z',
                         name:'Geographic subdivision',
                         value: "",
                     }
@@ -2315,58 +2319,58 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'2',
                         name:'Source of heading or term',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'a',
                         name:'Corporate name or jurisdiction name as entry element',
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'b',
                         name:'Subordinate unit',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'c',
                         name:'Location of meeting',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'d',
                         name:'Date of meeting or treaty signing',
                         value: "",
                     },{
                         id: 8,
-                        code:'h',
+                        code:'t',
                         name:'Title of a work',
                         value: "",
                     },{
                         id: 9,
-                        code:'i',
+                        code:'v',
                         name:'Form subdivision',
                         value: "",
                     },{
                         id: 10,
-                        code:'j',
+                        code:'x',
                         name:'General subdivision',
                         value: "",
                     },{
                         id: 11,
-                        code:'k',
+                        code:'y',
                         name:'Chronological subdivision',
                         value: "",
                     },{
                         id: 12,
-                        code:'n',
+                        code:'z',
                         name:'Geographic subdivision',
                         value: "",
                     }
@@ -2382,58 +2386,58 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'2',
                         name:'Source of heading or term',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'a',
                         name:'Meeting name or jurisdiction name as entry element',
                         value: "",
                     },{
                         id: 5,
-                        code:'e',
+                        code:'c',
                         name:'Location of meeting',
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'d',
                         name:'Date of meeting',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'e',
                         name:'Subordinate unit',
                         value: "",
                     },{
                         id: 8,
-                        code:'h',
+                        code:'t',
                         name:'Title of a work',
                         value: "",
                     },{
                         id: 9,
-                        code:'i',
+                        code:'v',
                         name:'Form subdivision',
                         value: "",
                     },{
                         id: 10,
-                        code:'j',
+                        code:'x',
                         name:'General subdivision',
                         value: "",
                     },{
                         id: 11,
-                        code:'k',
+                        code:'y',
                         name:'Chronological subdivision',
                         value: "",
                     },{
                         id: 12,
-                        code:'n',
+                        code:'z',
                         name:'Geographic subdivision',
                         value: "",
                     }
@@ -2449,18 +2453,18 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'2',
                         name:'Source of heading or term',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },{
                         id: 3,
-                        code:'c',
+                        code:'a',
                         name:'Uniform title',
                         value: "",
                     },{
@@ -2470,32 +2474,32 @@ export const marcRecordTemplate = [
                         value: "",
                     },{
                         id: 6,
-                        code:'f',
+                        code:'l',
                         name:'Language of a work',
                         value: "",
                     },{
                         id: 7,
-                        code:'g',
+                        code:'t',
                         name:'Title of a work',
                         value: "",
                     },{
                         id: 8,
-                        code:'h',
+                        code:'v',
                         name:'Form subdivision',
                         value: "",
                     },{
                         id: 10,
-                        code:'j',
+                        code:'x',
                         name:'General subdivision',
                         value: "",
                     },{
                         id: 11,
-                        code:'k',
+                        code:'y',
                         name:'Chronological subdivision',
                         value: "",
                     },{
                         id: 12,
-                        code:'n',
+                        code:'z',
                         name:'Geographic subdivision',
                         value: "",
                     }
@@ -2511,13 +2515,13 @@ export const marcRecordTemplate = [
                 subFields:[
                     {
                         id: 1,
-                        code:'a',
+                        code:'2',
                         name:'Source of heading or term',
                         value: "",
                     },
                     {
                         id: 2,
-                        code:'b',
+                        code:'9',
                         name:'9 (RLIN)',
                         value: "",
                     },{
@@ -3975,47 +3979,110 @@ export const marcRecordTemplate = [
                         code:'a',
                         name:'Source of classification or shelving scheme',
                         value: '',
+                        isRequired: true,
                         options:['Dewey Decimal Classification','Library of Congress Classification']
+                        
                     },
                     {
                         id: 2,
                         code:'b',
                         name:'item type',
                         value: "",
-                        options:['Books','Computer Files','Continuing Resources','Maps','Mixed Materials','Music','Reference','Visual Materials']
-                    },{
-                        id: 3,
+                        isRequired: true,
+                        options:['Journal','Reference','E-Journal','Multimedia','Magazine','Fiction','E-book','Filipiniana','Research Paper','Series','Atlas','Computer File']
+                    },
+                    {
+                        id: 2,
                         code:'c',
-                        name:'Edition',
+                        name:'Use Restrictions',
                         value: "",
+                        isRequired: true,
+                        options:['No Restrictions','Restricted Access']
+                    },
+                    {
+                        id: 2,
+                        code:'d',
+                        name:'Damaged Status',
+                        value: "",
+                        isRequired: true,
+                        options:['Not Damaged','Damaged']
+                    },
+                    {
+                        id: 2,
+                        code:'e',
+                        name:'Collection Code',
+                        value: "",
+                        isRequired: true,
+                        
                     },{
                         id: 5,
-                        code:'d',
+                        code:'i',
+                        name:'Language',
+                        isRequired: true,
+                        options:['All','English','Filipino']
+                    },{
+                        id: 5,
+                        code:'f',
+                        name:'Current Location',
+                        value: "",
+                        isRequired: true,
+                    },{
+                        id: 5,
+                        code:'g',
+                        name:'Shelving Location',
+                        value: "",
+                        isRequired: true,
+                    },{
+                        id: 5,
+                        code:'h',
+                        name:'Date acquired',
+                        value: "",
+                        isRequired: true,
+                    },{
+                        id: 5,
+                        code:'i',
+                        name:'Source of Acquisition',
+                        value: "",
+                        isRequired: true,
+                    },{
+                        id: 3,
+                        code:'j',
+                        name:'Edition',
+                        value: "",
+                        isRequired: false,
+                    },{
+                        id: 5,
+                        code:'k',
                         name:'Classification part',
                         value: "",
+                        isRequired: false,
                     },{
                         id: 6,
-                        code:'e',
+                        code:'l',
                         name:'Item part',
                         value: "",
+                        isRequired: false,
                     },{
                         id: 10,
-                        code:'f',
+                        code:'m',
                         name:'Call number prefix',
                         value: "",
+                        isRequired: false,
                     },{
                         id: 11,
-                        code:'g',
+                        code:'n',
                         name:'Call number suffix',
                         value: "",
+                        isRequired: false,
                     },{
                         id: 12,
-                        code:'h',
+                        code:'o',
                         name:'Suppress in OPAC',
                         value: "",
+                        isRequired: false,
                     }
                 ],
-                isRequired: false,
+                isRequired: true,
                 frameworks:['Default Framework','Books/Workbooks','Serials','CD/DVD General']
 
             }

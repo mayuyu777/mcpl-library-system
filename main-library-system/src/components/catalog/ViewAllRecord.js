@@ -48,9 +48,18 @@ export default function ViewAllRecord(){
        const title = item.fields.filter((item)=>{
             return item.code === '245'
         }).map((item)=>{
-            return item.subFields.map((item,index)=>{
-                return index === 0 ? item.value.concat(" by ") : item.value
+            let text = '';
+            item.subFields.map((item,index)=>{
+               
+                if(item.name==='Title' || item.name==='Remainder of title'){
+                    text += item.value + ' ';
+                }
+                if(item.name==='Statement of responsibility, etc.'){
+                    text += ' by ' + item.value;
+                }
+                
             })
+            return text
         })
 
        const location = item.fields.filter((item)=>{
@@ -78,6 +87,7 @@ export default function ViewAllRecord(){
         })
 
      
+        console.log(publication)
 
         return(
             <div className="record-item" style={!(index & 1) ? { backgroundColor:'rgba(227, 229, 234, 0.415)'}: null}>
@@ -85,9 +95,16 @@ export default function ViewAllRecord(){
                 <div className='record-info-cont'>
                     <NavLink style={{textDecoration:'none',fontWeight:'700',fontSize:'17px'}} to={'/catalog/'+item.id}>{title}</NavLink>
                     <hr style={{marginTop:'5px', opacity:'.3'}}/>
-                    <p>Physical Description: <span>{physicalDesc}</span></p>
-                    <p>Publication/Distribution: <span>{publication}</span></p>
-                    <p>Location: <span>{location}</span></p>
+                    {
+                        physicalDesc.length > 0 ? <p>Physical Description: <span>{physicalDesc}</span></p> : null
+                    }
+                    {
+                        publication.length > 0  ?  <p>Publication/Distribution: <span>{publication}</span></p> : null
+                    }
+                    {
+                        location.length > 0  ? <p>Location: <span>{location}</span></p> : null
+                    }
+                   
                 </div>
                 
             </div>

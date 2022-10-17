@@ -374,6 +374,7 @@ html, body{
 
 .upper-cont > img {
   width: 10pc ;
+  height: 14pc;
   object-fit: cover;
   border: 5px solid white;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.172);
@@ -382,6 +383,7 @@ html, body{
 
 .info-text-cont {
   color: rgba(0, 0, 0, 0.665);
+
 }
 
 .info-text-cont > h3 {
@@ -410,7 +412,7 @@ html, body{
 .rec-location-cont {
   margin: auto;
   text-align: center;
-  margin-top: 5pc;
+  margin-top: 2pc;
 }
 
 
@@ -434,6 +436,34 @@ html, body{
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
+
+.marc-view-cont{
+  margin: auto;
+  font-size: 13px;
+  margin-top: 5pc;
+}
+
+.marc-view-cont > hr{
+  border: 1px solid rgba(0, 0, 0, 0.083);
+}
+
+.marc-view-cont > table {
+  margin: auto;
+  text-align: left;
+  border: 1px solid rgba(101, 95, 95, 0.157);
+  margin-top: 2pc;
+}
+
+.marc-view-cont > table > tr > th {
+  background-color: rgba(13, 75, 208, 0.146);
+  padding: 0;
+}
+.marc-view-cont > table > tr > td {
+  background-color: rgba(201, 210, 229, 0.146);
+  padding: 0;
+  padding-left: 2pc;
+}
+
 
 
 

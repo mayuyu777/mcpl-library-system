@@ -17,6 +17,7 @@ export default function AdvanceSearch(){
             value: ''
         }
     ]);
+    const [searchFlag, setSearchFlag] = useState(false);
 
     const languages = ['All','English','Filipino'];
     const keyWords = ['Subject','Title','Series Title','Author','Publisher','Standard number'];

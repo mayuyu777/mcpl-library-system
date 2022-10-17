@@ -61,7 +61,7 @@ const frameworks = [
 
     const bookInfo = [
         {
-            subfield: ['Title'],
+            subfield: ['Title','Remainder of title'],
             text: 'Title:'
         },
         {
@@ -83,6 +83,22 @@ const frameworks = [
         {
             subfield: ['Summary, etc'],
             text: 'Summary:'
+        }
+        
+    ]
+
+    const locationInfo = [
+        {
+            subfield: ['Collection Code'],
+            text: 'Collection Code'
+        },
+        {
+            subfield: ['Current Location'],
+            text: 'Current Location'
+        },
+        {
+            subfield: ['Shelving Location'],
+            text: 'Shelving Location'
         }
         
     ]
@@ -326,19 +342,21 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                     <div className="upper-cont-main">
                         <div className="upper-cont">
                             <img alt="img" src={'/uploads/'+book[0].img}/>
-                            <div>
+                            <div style={{width:'65%'}}>
                                 <div className="info-text-cont">
                                     {
                                         bookInfo?.map((item)=>{
                                             let text = '';
                                             let flag = false;
+                                            let name = ''
                                 
 
                                             item?.subfield?.map((fitem,index)=>{
                                                 const data = book[0]?.fields?.map((item)=>{
                                                     item?.subFields?.map((item)=>{
+                                                        name = item.name;
                                                         if(item.name === fitem){
-                                                        text+= (index === 0? item.value : ', '.concat(item.value));
+                                                        text+= (index === 0? item.value : ( item.name === 'Title' ||'Remainder of title'?  item.value : ', '.concat(item.value))) + ' ';
                                                         flag = true;
                                                         }
                                                     })
@@ -346,11 +364,50 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
 
                                             })
 
-                                            return flag? <h3>{item.text} <span>{text}</span></h3> : null;
+                                            return flag? (item.text === 'Title:'? <h3>{item.text} <span style={{fontWeight:'bold',fontSize:'19px'}}>{text}</span></h3> : <h3>{item.text} <span>{text}</span></h3>) : null;
                                         })
                                     }
                                 </div>
                                 <h4>No. of copies: <span>{book[0].copies}</span></h4>
+                                <div className="rec-location-cont">
+                                <table>
+                                    <tr>
+                                        <th>QR Code</th>
+                                        {
+                                            locationInfo.map((item)=>{
+                                                return <th>{item.text}</th>
+                                            })
+                                        }
+                                    </tr>
+                                    <tr>
+                                        <td>HHEUF98324</td>
+                                        {
+                                            locationInfo?.map((item)=>{
+                                                let text = '';
+                                                let flag = false;
+                                                let name = ''
+
+
+                                                item?.subfield?.map((fitem,index)=>{
+                                                    const data = book[0]?.fields?.map((item)=>{
+                                                        item?.subFields?.map((item)=>{
+                                                            name = item.name;
+                                                            if(item.name === fitem){
+                                                            text+= (index === 0? item.value : ', '.concat(item.value));
+                                                            flag = true;
+                                                            }
+                                                        })
+                                                    })
+
+                                                })
+
+                                                return flag?  <td>{text}</td> : null;
+                                            })
+                                        }
+                                    
+                                    </tr>
+                                </table>
+                            </div>
                             </div>
                         </div>
                         <div className="record-btn-cont">
@@ -358,20 +415,42 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                                 <button className="record-delete-btn" onClick={deleteRecord}>Delete Record</button>
                         </div>
                     </div>
-                    <div className="rec-location-cont">
+                    <div className="marc-view-cont">
+                        <hr/>
                         <table>
-                            <tr>
-                                <th>QR Code</th>
-                                <th>Collection or Sublocation</th>
-                                <th>Location</th>
-                            </tr>
-                            <tr>
-                                <td>HHEUF98324</td>
-                                <td>Academic Collection</td>
-                                <td>Mandaue City Public Library</td>
-                            </tr>
+                            {
+                                book[0]?.fields?.sort((a,b)=>{
+                                    if (a.code < b.code) {
+                                        return -1;
+                                    }
+                                    if (a.code > b.code) {
+                                        return 1;
+                                    }
+                                    return 0;
+                                }).map((item)=>{
+                                    return(
+                                        <>
+                                        <tr>
+                                            <th>{item.code + " "+ (item?.indicator1 == null? "":item?.indicator1) + (item?.indicator2 == null? "":item?.indicator2) +" - "+ item.name}</th>
+                                            <th></th>
+                                        </tr>
+                                        
+                                        {
+                                            item.subFields.map((item)=>{
+                                                return <tr>
+                                                            <td>{item.name}</td>
+                                                            <td>{item.value}</td>
+                                                        </tr>
+                                            })
+                                        }
+                                        </>
+                                    )
+                                })
+                            }
                         </table>
+                
                     </div>
+                    
                     </div>
                 :
 
@@ -457,6 +536,7 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                                                                         : 
                                                                         <>
                                                                             <select className='subfield-input'  name={item.name} style={{height:'2pc'}} onChange={event => changeSubfieldInputVal(event,tabIndex,fieldIndex,index)} >
+                                                                                <option ></option>
                                                                                 {
                                                                                     item.options.map((fitem)=>{
                                                                         
