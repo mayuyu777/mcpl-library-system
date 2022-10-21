@@ -629,7 +629,7 @@ app.post('/search-book', async (req,res)=>{
                 sqlSelect += " )) ";
             }
 
-            console.log(sqlSelect);
+            
 
        }catch(err){
 
