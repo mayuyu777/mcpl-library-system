@@ -372,7 +372,7 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                                 <div className="rec-location-cont">
                                 <table>
                                     <tr>
-                                        <th>QR Code</th>
+                                        {/* <th>QR Code</th> */}
                                         {
                                             locationInfo.map((item)=>{
                                                 return <th>{item.text}</th>
@@ -380,7 +380,7 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                                         }
                                     </tr>
                                     <tr>
-                                        <td>HHEUF98324</td>
+                                        {/* <td>HHEUF98324</td> */}
                                         {
                                             locationInfo?.map((item)=>{
                                                 let text = '';

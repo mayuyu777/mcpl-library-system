@@ -450,10 +450,193 @@ app.post('/updateRecord', async (req,res)=>{
 
 })
 
-app.post('/search-book',(req,res)=>{
+app.post('/search-book', async (req,res)=>{
+
+    const subjectCodes = [
+        {
+            code: '600',
+            subName: 'Personal name'
+        },{
+            code: '610',
+            subName: 'Corporate name or jurisdiction name as entry element'
+        },{
+            code: '611',
+            subName: 'Meeting name or jurisdiction name as entry element'
+        },{
+            code: '630',
+            subName: 'Uniform title'
+        },{
+            code: '648',
+            subName: 'Chronological term'
+        },{
+            code: '650',
+            subName: 'Topical term or geographic name as entry element'
+        },{
+            code: '651',
+            subName: 'Geographic name'
+        },{
+            code: '654',
+            subName: 'Facet/hierarchy designation'
+        }
+    ]
+
+
+    const titleCodes = [
+        {
+            code: '245',
+            subName: 'Title'
+        },
+        {
+            code: '245',
+            subName: 'Remainder of title'
+        }
+    ]
+
+
+    const authorCodes = [
+        {
+            code: '245',
+            subName: 'Statement of responsibility, etc.'
+        },
+        {
+            code: '100',
+            subName: 'Personal name'
+        }
+    ]
+
+    const publisherCodes = [
+        {
+            code: '260',
+            subName: 'Name of publisher, distributor, etc.'
+        },
+        {
+            code: '260',
+            subName: 'Place of publication, distribution, etc'
+        }
+    ]
+
+    const standardNumCodes = [
+        {
+            code: '020',
+            subName: 'International Standard Book Number'
+        },
+        {
+            code: '022',
+            subName: 'International Standard Serial Number'
+        }
+    ]
+
+
+    const itemTypeCode =  {
+            code: '942',
+            subName: 'item type'
+        }
+    
+
 
     if(req.session.user){
-        console.log(req.body)
+        const itemTypeArray = req.body.itemTypeArray;
+        const date = req.body.date;
+        const language = req.body.language;
+        const searchArray = req.body.searchArray;
+
+       let sqlSelect = 'Select * from book inner join field on book.book_id = field.book_id inner join subfield on field.field_id = subfield.field_id where (subfield.sub_name = "Language" and subfield.sub_value = '+language+') ';
+
+       try{
+            if(date.from != ''){
+                sqlSelect += ' and (subfield.sub_name = "Date of publication, distribution, etc." and subfield.sub_value >= '+date.from+') ';
+            }
+            if(date.to != ''){
+                sqlSelect += ' and (subfield.sub_name = "Date of publication, distribution, etc." and subfield.sub_value <= '+date.to+') ';
+            }
+    
+            if(searchArray[0].value != ''){
+    
+                searchArray.map((item, index)=>{
+    
+                    sqlSelect += item.operator + ' (';
+    
+                    if(item.keyword === 'Subject'){
+                        
+                        subjectCodes.map((sitem, index)=>{
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+    
+                            if(index < subjectCodes.length-1){
+                                sqlSelect += ' or ';
+                            }
+                        })
+                    
+                    }
+    
+                    if(item.keyword === 'Title'){
+                        
+                        titleCodes.map((sitem)=>{
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+    
+                            if(index < subjectCodes.length-1){
+                                sqlSelect += ' or ';
+                            }
+                        })
+                    }
+    
+                    if(item.keyword === 'Author'){
+                        authorCodes.map((sitem)=>{
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+    
+                            if(index < subjectCodes.length-1){
+                                sqlSelect += ' or ';
+                            }
+                        })
+    
+                    }
+    
+    
+                    if(item.keyword === 'Publisher'){
+                        publisherCodes.map((sitem)=>{
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+    
+                            if(index < subjectCodes.length-1){
+                                sqlSelect += ' or ';
+                            }
+                        })
+    
+                    }
+    
+                    if(item.keyword === 'Standard number'){
+                        standardNumCodes.map((sitem)=>{
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+    
+                            if(index < subjectCodes.length-1){
+                                sqlSelect += ' or ';
+                            }
+                        })
+    
+                    }
+    
+                    sqlSelect += " ) ";
+                })
+            }
+
+            if(itemTypeArray.length > 0){
+                sqlSelect += "( field.field_code ="+itemTypeCode.code+" and subfield.sub_name = "+itemTypeCode.subName+" and subfield.sub_value in (";
+                itemTypeArray.map((item,index)=>{
+                    sqlSelect += item;
+
+                    if(index < itemTypeArray.length-1){
+                        sqlSelect += ', '
+                    }
+                })
+                sqlSelect += " )) ";
+            }
+
+            console.log(sqlSelect);
+
+       }catch(err){
+
+            console.log(err);
+       }
+       
+
     }
 })
 

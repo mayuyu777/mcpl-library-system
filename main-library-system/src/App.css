@@ -452,6 +452,7 @@ html, body{
   text-align: left;
   border: 1px solid rgba(101, 95, 95, 0.157);
   margin-top: 2pc;
+  width: 80%;
 }
 
 .marc-view-cont > table > tr > th {

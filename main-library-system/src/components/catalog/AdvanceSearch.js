@@ -10,17 +10,16 @@ export default function AdvanceSearch(){
     });
     const [language,setLanguage] = useState('All');
     const [searchArray, setSearchArray] = useState([
-        
         { 
             keyword: 'Subject',
             operator: 'and',
             value: ''
         }
     ]);
-    const [searchFlag, setSearchFlag] = useState(false);
+    // const [searchFlag, setSearchFlag] = useState(false);
 
     const languages = ['All','English','Filipino'];
-    const keyWords = ['Subject','Title','Series Title','Author','Publisher','Standard number'];
+    const keyWords = ['Subject','Title','Author','Publisher','Standard number'];
     const operators = ['and','or','not'];
     const itemTypes = ['Journal','Reference','E-Journal','Multimedia','Magazine','Fiction','E-book','Filipiniana','Research Paper','Series','Atlas','Computer File'];
     const searchObject = {
@@ -59,11 +58,13 @@ export default function AdvanceSearch(){
         if(name === 'from'){
             date.from = value;
             setDate(date)
+            console.log(date)
             
         }
         if(name === 'to'){
             date.to = value;
             setDate(date)
+            console.log(date)
         }
 
         if(name === 'language'){
@@ -94,20 +95,36 @@ export default function AdvanceSearch(){
     }
 
 
+    const curDate = new Date();
+    const curYear = curDate.getFullYear();
+    const minYear = 1980;
+
+
     const searchBook = ()=>{
 
-        Axios.post('http://localhost:3030/search-book',{
-            itemTypeArray: itemTypeArray,
-            date: date,
-            language: language,
-            searchArray: searchArray
+    
+       
+        if(date.from <= curYear && date.from >= minYear && date.to <= curYear && date.to >= minYear){
+            Axios.post('http://localhost:3030/search-book',{
+                itemTypeArray: itemTypeArray,
+                date: date,
+                language: language,
+                searchArray: searchArray
+    
+            }).then((response)=>{
+                console.log(response);
+            }).then((response)=>{
+                console.log(response);
+            })
+        }else{
+            alert("Dates must be within the range: " + minYear.toString() +" - "+curYear);
+        }
 
-        }).then((response)=>{
-            console.log(response);
-        }).then((response)=>{
-            console.log(response);
-        })
+       
     }
+
+
+
 
     return(
         <div className='content-cont'>
@@ -121,7 +138,7 @@ export default function AdvanceSearch(){
                                 <>
                                 {
                                     index > 0 ?
-                                    <select className="advance-search-select" name="operators" onChange={event => handleChange(event,index-1)}>
+                                    <select className="advance-search-select" name="operators" onChange={event => handleChange(event,index)}>
                                         {
                                             operators.map((item)=>{
                                                 return <option key={item}>{item}</option>
@@ -169,9 +186,9 @@ export default function AdvanceSearch(){
                         <h4 style={{margin:'0',marginTop:'2pc'}}>Publication Date Range</h4>
                         <hr/>
                         <div style={{marginTop:'1pc'}}>
-                            <input className="advance-search-input" type='text' name='from' onChange={event => handleChange(event,0)}></input>
+                            <input className="advance-search-input" type='number' min={minYear} max={curYear}  name='from' onChange={event => handleChange(event,0)}></input>
                             <label>-  </label>
-                            <input className="advance-search-input" type='text' name='to' onChange={event => handleChange(event,0)}></input>
+                            <input className="advance-search-input" type='number' min={minYear} max={curYear}  name='to' onChange={event => handleChange(event,0)}></input>
                         </div>
                     </div>
                     <div>
