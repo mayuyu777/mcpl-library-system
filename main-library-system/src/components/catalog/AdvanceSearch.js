@@ -6,10 +6,14 @@ import { removeDuplicateObjectFromArray, convertData } from '../../data/Framewor
 
 
 export default function AdvanceSearch(){
+    const curDate = new Date();
+    const curYear = curDate.getFullYear();
+    const minYear = 1980;
+
     const [itemTypeArray, setItemTypeArray] = useState([]);
     const [date, setDate] = useState({
-        from: '',
-        to: ''
+        from: minYear,
+        to: curYear
     });
     const [language,setLanguage] = useState('All');
     const [searchArray, setSearchArray] = useState([
@@ -199,11 +203,6 @@ export default function AdvanceSearch(){
     }
 
 
-    const curDate = new Date();
-    const curYear = curDate.getFullYear();
-    const minYear = 1980;
-
-
     const searchBook = ()=>{
 
     
@@ -298,9 +297,9 @@ export default function AdvanceSearch(){
                             <h4 style={{margin:'0',marginTop:'2pc'}}>Publication Date Range</h4>
                             <hr/>
                             <div style={{marginTop:'1pc'}}>
-                                <input className="advance-search-input" type='number' min={minYear} max={curYear}  name='from' onChange={event => handleChange(event,0)}></input>
+                                <input className="advance-search-input" type='number' min={minYear} max={curYear} defaultValue={date.from}  name='from' onChange={event => handleChange(event,0)}></input>
                                 <label>-  </label>
-                                <input className="advance-search-input" type='number' min={minYear} max={curYear}  name='to' onChange={event => handleChange(event,0)}></input>
+                                <input className="advance-search-input" type='number' min={minYear} max={curYear} defaultValue={date.to} name='to' onChange={event => handleChange(event,0)}></input>
                             </div>
                         </div>
                         <div>

@@ -532,7 +532,7 @@ const changeSubfieldIndicatorVal = (event,tabIndex,findex,index)=>{
                                                                         <input name={item.code} className='subfield-code' type='text' maxLength='1' style={{fontSize:'12px',marginLeft:'3%'}} defaultValue={item.code} onChange={event =>  changeSubfieldCodeVal(event,tabIndex,fieldIndex,index) }/>
                                                                         <span style={{color:"red",fontSize:'10px'}} ><label style={{fontSize:'12px', textAlign:'right',width:'20%',color:'rgb(19, 19, 155)'}}>{item.name}</label>{item.isRequired ? ' (required)' : ''}</span>
                                                                     { 
-                                                                        !item?.options ? <input style={{fontSize:'12px'}} type='text' name={item.name} className='subfield-input' defaultValue={item.value} onChange={event => changeSubfieldInputVal(event,tabIndex,fieldIndex,index)} /> 
+                                                                        !item?.options ? <textarea rows="1" cols="50" style={{fontSize:'12px'}} name={item.name} className='subfield-input' defaultValue={item.value} onChange={event => changeSubfieldInputVal(event,tabIndex,fieldIndex,index)} /> 
                                                                         : 
                                                                         <>
                                                                             <select className='subfield-input'  name={item.name} style={{height:'2pc'}} onChange={event => changeSubfieldInputVal(event,tabIndex,fieldIndex,index)} >

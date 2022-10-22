@@ -28,6 +28,7 @@ html, body{
 
 /*Loading CSS*/
 
+
 .loading-cont{
   position: absolute;
   left: 0;
@@ -48,16 +49,41 @@ html, body{
 
 /*Login CSS*/
 
+.login-background{
+  height: 100vh;
+  background-image: url('./assets/275559246_331445855694673_6887882595759885476_n.jpg');
+  background-repeat:round;
+
+}
+
+.login-layer{
+  height: 100%;
+  padding-top: 5%;
+  background-color: rgba(0, 0, 0, 0.501);
+}
+
 .login-cont {
   width: 50%;
   padding-top: 1pc;
   padding-bottom: 3pc;
   margin: auto;
-  margin-top: 3pc;
   text-align: center;
   border-radius: 5px;
-  background-color: rgb(198, 228, 198);
+  background-color: rgba(45, 125, 45, 0.946);
   border: 1px solid rgb(177, 177, 177);
+}
+
+.login-cont > form > input {
+  height: 2pc;
+  width: 30%;
+  border-radius: 5px;
+}
+
+.login-cont > form > button {
+  height: 2pc;
+  width: 25%;
+  border-radius: 5px;
+  background-color: rgb(219, 214, 214);
 }
 
 .login-cont > h2 {
@@ -65,10 +91,10 @@ html, body{
 }
 
 .login-cont > form > p {
-  font-size: 12px;
-  color: red;
+  font-size: 11px;
+  color: rgb(240, 241, 240);
   margin: 0;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 

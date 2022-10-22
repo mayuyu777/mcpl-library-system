@@ -137,28 +137,31 @@ export  default function Login(){
     }
 
     return(
-        <div className="login-cont">
-            <h2>Mandaue City Public Library</h2>
-            <h3>Login</h3>
+        <div className='login-background'>
+            <div className='login-layer'>
+                <div className="login-cont">
+                    <img alt="logo" style={{borderRadius:'5pc'}} src={require('../assets/mcpl.png')}/>
+                    <h3>Login</h3>
 
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    placeholder="Email"
-                    name="email"
-                    onChange={handleChange} /><br/>
-                <p>{formErrors.email}</p>
-                <input 
-                    type="password" 
-                    placeholder="Password"
-                    name='pass'
-                    onChange={handleChange} /><br/>
-                <p>{formErrors.pass}</p>
-                <p>{loginRes.message}</p>
-                <p>{loginRes.err}</p>
-                <button>Sign in</button>
-            </form>
-
+                    <form onSubmit={handleSubmit}>
+                        <input 
+                            type="text" 
+                            placeholder="Email"
+                            name="email"
+                            onChange={handleChange} /><br/>
+                        <p>{formErrors.email}</p>
+                        <input 
+                            type="password" 
+                            placeholder="Password"
+                            name='pass'
+                            onChange={handleChange} /><br/>
+                        <p>{formErrors.pass}</p>
+                        <p>{loginRes.message}</p>
+                        <p>{loginRes.err}</p>
+                        <button>Sign in</button>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 }
