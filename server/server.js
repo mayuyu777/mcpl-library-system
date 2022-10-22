@@ -284,7 +284,6 @@ app.get('/getAllBookRec',async (req,res)=>{
                 console.log(err);
             }
             if(result){     
-
                 res.send({result: result})
     
             }     
@@ -540,26 +539,37 @@ app.post('/search-book', async (req,res)=>{
         const language = req.body.language;
         const searchArray = req.body.searchArray;
 
-       let sqlSelect = 'Select * from book inner join field on book.book_id = field.book_id inner join subfield on field.field_id = subfield.field_id where (subfield.sub_name = "Language" and subfield.sub_value = '+language+') ';
+       let sqlSelect = 'Select book.book_id from book inner join field on book.book_id = field.book_id inner join subfield on field.field_id = subfield.field_id where ';
 
        try{
-            if(date.from != ''){
-                sqlSelect += ' and (subfield.sub_name = "Date of publication, distribution, etc." and subfield.sub_value >= '+date.from+') ';
+
+            if(language === 'All'){
+                sqlSelect += '(subfield.sub_name = "Language" and (subfield.sub_value = "Filipino" or subfield.sub_value = "English"))';
+            }else{
+                sqlSelect += '(subfield.sub_name = "Language" and subfield.sub_value = "'+language+'")';
             }
+
+            if(date.from != ''){
+                sqlSelect += ' or ((subfield.sub_name = "Date of publication, distribution, etc." and subfield.sub_value >= "'+date.from+'") ';
+            }
+
             if(date.to != ''){
-                sqlSelect += ' and (subfield.sub_name = "Date of publication, distribution, etc." and subfield.sub_value <= '+date.to+') ';
+                sqlSelect += ' and (subfield.sub_name = "Date of publication, distribution, etc." and subfield.sub_value <= "'+date.to+'")) ';
             }
     
             if(searchArray[0].value != ''){
+
     
                 searchArray.map((item, index)=>{
     
+                  
                     sqlSelect += item.operator + ' (';
+                   
     
                     if(item.keyword === 'Subject'){
                         
                         subjectCodes.map((sitem, index)=>{
-                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = '"+sitem.subName+"' and subfield.sub_value like '%"+item.value+"%')";
     
                             if(index < subjectCodes.length-1){
                                 sqlSelect += ' or ';
@@ -570,20 +580,20 @@ app.post('/search-book', async (req,res)=>{
     
                     if(item.keyword === 'Title'){
                         
-                        titleCodes.map((sitem)=>{
-                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+                        titleCodes.map((sitem, index)=>{
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = '"+sitem.subName+"' and subfield.sub_value like '%"+item.value+"%')";
     
-                            if(index < subjectCodes.length-1){
+                            if(index <  titleCodes.length-1){
                                 sqlSelect += ' or ';
                             }
                         })
                     }
     
                     if(item.keyword === 'Author'){
-                        authorCodes.map((sitem)=>{
-                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+                        authorCodes.map((sitem, index)=>{
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = '"+sitem.subName+"' and subfield.sub_value like '%"+item.value+"%')";
     
-                            if(index < subjectCodes.length-1){
+                            if(index < authorCodes.length-1){
                                 sqlSelect += ' or ';
                             }
                         })
@@ -592,10 +602,10 @@ app.post('/search-book', async (req,res)=>{
     
     
                     if(item.keyword === 'Publisher'){
-                        publisherCodes.map((sitem)=>{
-                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+                        publisherCodes.map((sitem, index)=>{
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = '"+sitem.subName+"' and subfield.sub_value like '%"+item.value+"%')";
     
-                            if(index < subjectCodes.length-1){
+                            if(index < publisherCodes.length-1){
                                 sqlSelect += ' or ';
                             }
                         })
@@ -603,10 +613,10 @@ app.post('/search-book', async (req,res)=>{
                     }
     
                     if(item.keyword === 'Standard number'){
-                        standardNumCodes.map((sitem)=>{
-                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = "+sitem.subName+" and subfield.sub_value like '%"+item.value+"%')";
+                        standardNumCodes.map((sitem, index)=>{
+                            sqlSelect += "( field.field_code ="+sitem.code+" and subfield.sub_name = '"+sitem.subName+"' and subfield.sub_value like '%"+item.value+"%')";
     
-                            if(index < subjectCodes.length-1){
+                            if(index < standardNumCodes.length-1){
                                 sqlSelect += ' or ';
                             }
                         })
@@ -618,9 +628,9 @@ app.post('/search-book', async (req,res)=>{
             }
 
             if(itemTypeArray.length > 0){
-                sqlSelect += "( field.field_code ="+itemTypeCode.code+" and subfield.sub_name = "+itemTypeCode.subName+" and subfield.sub_value in (";
+                sqlSelect += " or ( field.field_code ="+itemTypeCode.code+" and subfield.sub_name = '"+itemTypeCode.subName+"' and subfield.sub_value in (";
                 itemTypeArray.map((item,index)=>{
-                    sqlSelect += item;
+                    sqlSelect += '"'+item+'"';
 
                     if(index < itemTypeArray.length-1){
                         sqlSelect += ', '
@@ -629,7 +639,36 @@ app.post('/search-book', async (req,res)=>{
                 sqlSelect += " )) ";
             }
 
-            
+            sqlSelect += "group by book.book_id";
+
+
+            await db.query(sqlSelect,(err,result)=>{
+                    if(err){
+                        console.log(err)
+                    }
+
+                    if(result){
+                        sqlSelect = 'Select * from book inner join field on book.book_id = field.book_id inner join subfield on field.field_id = subfield.field_id where  book.book_id in (';
+
+                        result.map((item,index)=>{
+                            sqlSelect += "'"+item.book_id +"'";
+                            
+                            if(index < result.length-1){
+                                sqlSelect += ',';
+                            }
+                        })
+                        sqlSelect += ')';
+
+                        db.query(sqlSelect,(err,result)=>{
+                            if(err){
+                                console.log(err);
+                            }
+                            if(result){
+                                res.send({result:result});
+                            }
+                        })
+                    }
+                })
 
        }catch(err){
 
